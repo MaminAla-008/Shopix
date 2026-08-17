@@ -1,0 +1,101 @@
+@import "./variables";
+
+.deals-page {
+  min-height: calc(100vh - 80px);
+  padding: 80px 5%;
+  background: linear-gradient(135deg, rgba($primary, 0.12), transparent 70%), $background;
+  color: $text;
+
+  .deals-intro {
+    text-align: center;
+    margin-bottom: 36px;
+  }
+
+  .eyebrow {
+    display: inline-block;
+    margin-bottom: 10px;
+    color: $primary;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+  }
+
+  h1 {
+    font-size: clamp(2rem, 3vw, 2.8rem);
+    margin-bottom: 12px;
+  }
+
+  p {
+    color: $textGray;
+    max-width: 700px;
+    margin: 0 auto;
+    line-height: 1.7;
+  }
+
+  .deal-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+  }
+
+  .deal-card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid $border;
+    border-radius: $radius;
+    padding: 24px;
+    transition: transform $transition, border-color $transition;
+
+    &:hover {
+      transform: translateY(-6px);
+      border-color: $primary;
+    }
+
+    .deal-badge {
+      display: inline-block;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba($primary, 0.18);
+      color: $primary;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+
+    h2 {
+      font-size: 1.4rem;
+      margin-bottom: 10px;
+    }
+
+    p {
+      margin: 0 0 14px;
+      color: $textGray;
+    }
+
+    ul {
+      padding-left: 18px;
+      color: $textGray;
+      margin-bottom: 18px;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px 14px;
+      border: none;
+      border-radius: 999px;
+      background: $primary;
+      color: white;
+      font-weight: 700;
+      cursor: pointer;
+
+      &:hover {
+        background: $secondary;
+      }
+    }
+  }
+}

@@ -1,0 +1,523 @@
+@import "./variables";
+
+/* =========================================
+   HOME PAGE
+========================================= */
+
+.home-page {
+  min-height: 100vh;
+  background: $background;
+  overflow: hidden;
+}
+
+
+/* =========================================
+   PRODUCTS
+========================================= */
+
+.home-products {
+  padding-top: 90px;
+  padding-bottom: 80px;
+}
+
+
+.home-products .page-header {
+  max-width: 800px;
+  margin: 0 auto 50px;
+  text-align: center;
+}
+
+
+.home-products .page-header h1 {
+  margin: 12px 0 18px;
+
+  font-size: clamp(2.2rem, 5vw, 3.7rem);
+
+  line-height: 1.1;
+}
+
+
+.home-products .page-header h1 span {
+  background: linear-gradient(
+    90deg,
+    $primary,
+    $secondary
+  );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+
+.home-products .page-header p {
+  color: $textGray;
+
+  line-height: 1.8;
+}
+
+
+/* =========================================
+   PRODUCT CARDS
+========================================= */
+
+.home-products .cards {
+  max-width: 1200px;
+
+  margin: auto;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 25px;
+}
+
+
+/* =========================================
+   PROMO
+========================================= */
+
+.home-promo {
+  position: relative;
+
+  max-width: 1200px;
+
+  margin: 70px auto 0;
+
+  padding: 40px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 30px;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba($primary, 0.14),
+      rgba($secondary, 0.06)
+    );
+
+  border: 1px solid rgba($primary, 0.25);
+
+  border-radius: 25px;
+}
+
+
+.home-promo::after {
+  content: "";
+
+  position: absolute;
+
+  width: 250px;
+  height: 250px;
+
+  right: -100px;
+  top: -130px;
+
+  background: rgba($primary, 0.12);
+
+  border-radius: 50%;
+
+  filter: blur(50px);
+}
+
+
+.promo-text {
+  position: relative;
+
+  z-index: 2;
+
+  max-width: 720px;
+}
+
+
+.promo-text h2 {
+  margin: 10px 0 15px;
+
+  font-size: clamp(1.8rem, 4vw, 2.7rem);
+
+  line-height: 1.15;
+}
+
+
+.promo-text h2 span {
+  color: $primary;
+}
+
+
+.promo-text p {
+  color: $textGray;
+
+  line-height: 1.7;
+}
+
+
+.promo-items {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 18px;
+
+  margin-top: 20px;
+}
+
+
+.promo-items span {
+  color: $textGray;
+
+  font-size: 0.85rem;
+}
+
+
+.home-promo button {
+  position: relative;
+
+  z-index: 2;
+
+  flex-shrink: 0;
+
+  padding: 14px 24px;
+
+  border: none;
+
+  border-radius: 999px;
+
+  background:
+    linear-gradient(
+      90deg,
+      $primary,
+      $secondary
+    );
+
+  color: white;
+
+  font-weight: 800;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 10px 25px rgba($primary, 0.25);
+
+  transition: 0.3s ease;
+}
+
+
+.home-promo button:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 15px 35px rgba($primary, 0.35);
+}
+
+
+/* =========================================
+   BENEFITS
+========================================= */
+
+.home-benefits {
+  padding: 100px 7%;
+
+  background:
+    rgba(255, 255, 255, 0.015);
+
+  border-top: 1px solid $border;
+
+  border-bottom: 1px solid $border;
+}
+
+
+.home-benefits-header {
+  max-width: 750px;
+
+  margin: 0 auto 50px;
+
+  text-align: center;
+}
+
+
+.home-benefits-header h2 {
+  margin: 12px 0 15px;
+
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+
+.home-benefits-header h2 span {
+  color: $primary;
+}
+
+
+.home-benefits-header p {
+  color: $textGray;
+
+  line-height: 1.7;
+}
+
+
+.benefits-grid {
+  max-width: 1200px;
+
+  margin: auto;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap: 20px;
+}
+
+
+.benefit-card {
+  padding: 30px 25px;
+
+  background:
+    linear-gradient(
+      145deg,
+      rgba($primary, 0.07),
+      rgba(255, 255, 255, 0.025)
+    );
+
+  border: 1px solid $border;
+
+  border-radius: 20px;
+
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease;
+}
+
+
+.benefit-card:hover {
+  transform: translateY(-7px);
+
+  border-color:
+    rgba($primary, 0.45);
+}
+
+
+.benefit-icon {
+  width: 52px;
+  height: 52px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 20px;
+
+  background:
+    rgba($primary, 0.1);
+
+  border: 1px solid
+    rgba($primary, 0.2);
+
+  border-radius: 15px;
+
+  font-size: 1.4rem;
+}
+
+
+.benefit-card h3 {
+  margin: 0 0 10px;
+
+  font-size: 1.1rem;
+}
+
+
+.benefit-card p {
+  margin: 0;
+
+  color: $textGray;
+
+  font-size: 0.88rem;
+
+  line-height: 1.7;
+}
+
+
+/* =========================================
+   CTA
+========================================= */
+
+.home-cta {
+  position: relative;
+
+  padding: 110px 20px;
+
+  text-align: center;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at center,
+      rgba($primary, 0.15),
+      transparent 55%
+    );
+}
+
+
+.home-cta-content {
+  position: relative;
+
+  max-width: 800px;
+
+  margin: auto;
+}
+
+
+.home-cta h2 {
+  margin: 12px 0 20px;
+
+  font-size: clamp(2.3rem, 5vw, 4rem);
+
+  line-height: 1.08;
+}
+
+
+.home-cta h2 span {
+  color: $primary;
+}
+
+
+.home-cta p {
+  max-width: 650px;
+
+  margin: 0 auto 30px;
+
+  color: $textGray;
+
+  line-height: 1.8;
+}
+
+
+.home-cta button {
+  padding: 15px 28px;
+
+  border: none;
+
+  border-radius: 999px;
+
+  background:
+    linear-gradient(
+      90deg,
+      $primary,
+      $secondary
+    );
+
+  color: white;
+
+  font-weight: 800;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 10px 30px rgba($primary, 0.25);
+
+  transition: 0.3s ease;
+}
+
+
+.home-cta button:hover {
+  transform: translateY(-4px);
+
+  box-shadow:
+    0 18px 40px rgba($primary, 0.35);
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 950px) {
+
+  .home-products .cards {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+
+  .benefits-grid {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+
+  .home-promo {
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+
+
+  .home-promo button {
+    width: 100%;
+  }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+  .home-products {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+
+  .home-products .cards {
+    grid-template-columns: 1fr;
+
+    gap: 18px;
+  }
+
+
+  .home-promo {
+    padding: 30px 22px;
+
+    margin-top: 45px;
+
+    border-radius: 20px;
+  }
+
+
+  .promo-items {
+    flex-direction: column;
+
+    gap: 8px;
+  }
+
+
+  .benefits-grid {
+    grid-template-columns: 1fr;
+  }
+
+
+  .home-benefits {
+    padding: 70px 20px;
+  }
+
+
+  .home-cta {
+    padding: 75px 20px;
+  }
+
+
+  .home-cta h2 {
+    font-size: 2.4rem;
+  }
+}

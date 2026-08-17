@@ -1,0 +1,442 @@
+@import "./variables";
+
+/* =========================================
+   HOME PAGE
+========================================= */
+
+.home-page {
+  min-height: 100vh;
+
+  background:
+    radial-gradient(
+      circle at 15% 20%,
+      rgba($primary, 0.08),
+      transparent 30%
+    ),
+    $background;
+
+  overflow: hidden;
+}
+
+
+/* =========================================
+   HOME PRODUCTS
+========================================= */
+
+.home-products {
+  padding-top: 90px;
+  padding-bottom: 80px;
+}
+
+
+.home-products .page-header h1 {
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+
+  font-size: clamp(2.2rem, 4vw, 3.5rem);
+
+  font-weight: 850;
+}
+
+
+.home-products .page-header h1 span {
+  background:
+    linear-gradient(
+      90deg,
+      $primary,
+      $secondary
+    );
+
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  background-clip: text;
+}
+
+
+.home-products .page-header p {
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+
+  line-height: 1.8;
+}
+
+
+/* =========================================
+   PRODUCT GRID
+========================================= */
+
+.home-products .cards {
+  max-width: 1250px;
+
+  margin: 45px auto 0;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 24px;
+}
+
+
+/* =========================================
+   PROMO
+========================================= */
+
+.home-promo {
+  position: relative;
+
+  max-width: 1250px;
+
+  margin: 65px auto 0;
+
+  padding: 38px 42px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 30px;
+
+  overflow: hidden;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba($primary, 0.14),
+      rgba($secondary, 0.06)
+    );
+
+  border: 1px solid rgba($primary, 0.25);
+
+  border-radius: 24px;
+
+  box-shadow:
+    0 20px 50px rgba(0, 0, 0, 0.25);
+}
+
+
+.home-promo::before {
+  content: "";
+
+  position: absolute;
+
+  width: 250px;
+  height: 250px;
+
+  right: -100px;
+  top: -130px;
+
+  background: rgba($primary, 0.13);
+
+  border-radius: 50%;
+
+  filter: blur(40px);
+}
+
+
+.promo-content {
+  position: relative;
+  z-index: 2;
+
+  max-width: 750px;
+}
+
+
+.promo-content h2 {
+  margin: 8px 0 12px;
+
+  font-size: clamp(1.7rem, 3vw, 2.4rem);
+}
+
+
+.promo-content h2 span {
+  color: $primary;
+}
+
+
+.promo-content p {
+  max-width: 680px;
+
+  color: $textGray;
+
+  line-height: 1.7;
+}
+
+
+.promo-features {
+  display: flex;
+
+  gap: 18px;
+
+  margin-top: 20px;
+
+  flex-wrap: wrap;
+}
+
+
+.promo-features span {
+  color: $textGray;
+
+  font-size: 0.85rem;
+}
+
+
+.promo-features span::first-letter {
+  color: $primary;
+}
+
+
+.home-promo > button {
+  position: relative;
+  z-index: 2;
+
+  flex-shrink: 0;
+
+  padding: 14px 22px;
+
+  border: none;
+
+  border-radius: 999px;
+
+  background:
+    linear-gradient(
+      90deg,
+      $primary,
+      $secondary
+    );
+
+  color: white;
+
+  font-weight: 800;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 10px 25px rgba($primary, 0.22);
+
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+
+.home-promo > button:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 15px 35px rgba($primary, 0.35);
+}
+
+
+/* =========================================
+   MESSAGE
+========================================= */
+
+.home-products .account-message {
+  max-width: 700px;
+
+  margin: 25px auto 0;
+
+  padding: 14px 18px;
+
+  text-align: center;
+
+  color: $text;
+
+  background: rgba($primary, 0.10);
+
+  border: 1px solid rgba($primary, 0.3);
+
+  border-radius: 12px;
+
+  cursor: pointer;
+}
+
+
+/* =========================================
+   HOME CTA
+========================================= */
+
+.home-cta {
+  position: relative;
+
+  padding: 100px 20px;
+
+  text-align: center;
+
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at center,
+      rgba($primary, 0.14),
+      transparent 55%
+    );
+}
+
+
+.home-cta::before {
+  content: "";
+
+  position: absolute;
+
+  width: 300px;
+  height: 300px;
+
+  left: -120px;
+  top: 20px;
+
+  background: rgba($primary, 0.08);
+
+  border-radius: 50%;
+
+  filter: blur(60px);
+}
+
+
+.home-cta-content {
+  position: relative;
+
+  max-width: 750px;
+
+  margin: auto;
+}
+
+
+.home-cta h2 {
+  margin: 12px 0 18px;
+
+  font-size: clamp(2.3rem, 5vw, 4rem);
+
+  font-weight: 900;
+
+  line-height: 1.1;
+}
+
+
+.home-cta h2 span {
+  color: $primary;
+}
+
+
+.home-cta p {
+  max-width: 650px;
+
+  margin: 0 auto 30px;
+
+  color: $textGray;
+
+  line-height: 1.8;
+}
+
+
+.home-cta button {
+  padding: 14px 24px;
+
+  border: none;
+
+  border-radius: 999px;
+
+  background:
+    linear-gradient(
+      90deg,
+      $primary,
+      $secondary
+    );
+
+  color: white;
+
+  font-weight: 800;
+
+  cursor: pointer;
+
+  box-shadow:
+    0 10px 25px rgba($primary, 0.22);
+
+  transition: 0.3s ease;
+}
+
+
+.home-cta button:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 15px 35px rgba($primary, 0.35);
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 950px) {
+
+  .home-products .cards {
+    grid-template-columns:
+      repeat(2, 1fr);
+  }
+
+
+  .home-promo {
+    flex-direction: column;
+
+    align-items: flex-start;
+  }
+
+
+  .home-promo > button {
+    width: 100%;
+  }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+  .home-products {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+
+  .home-products .cards {
+    grid-template-columns: 1fr;
+
+    gap: 18px;
+  }
+
+
+  .home-promo {
+    margin-top: 45px;
+
+    padding: 30px 23px;
+
+    border-radius: 20px;
+  }
+
+
+  .promo-features {
+    flex-direction: column;
+
+    gap: 9px;
+  }
+
+
+  .home-cta {
+    padding: 70px 20px;
+  }
+
+
+  .home-cta h2 {
+    font-size: 2.4rem;
+  }
+}
