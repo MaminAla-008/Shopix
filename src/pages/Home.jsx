@@ -93,26 +93,6 @@ const Home = ({
 
       <section className="page home-products">
 
-        <div className="page-header">
-
-          <span className="eyebrow">
-            Sélection du mois
-          </span>
-
-          <h1>
-            Produits populaires
-            <span> et tendances 2026</span>
-          </h1>
-
-          <p>
-            Découvrez les articles les plus recherchés,
-            alliant design, qualité et performance pour
-            une expérience shopping premium.
-          </p>
-
-        </div>
-
-
         <div className="cards">
 
           {products.map((product) => (
