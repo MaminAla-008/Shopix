@@ -1,5 +1,4 @@
 import Hero from "../components/Hero/Hero";
-import ProductCard from "../components/ProductCard/ProductCard";
 import "../styles/pages.scss";
 import "../styles/Home.scss";
 
@@ -82,30 +81,10 @@ const Home = ({
 
       {/* =========================
           HERO
-      ========================= */}
-
-      <Hero />
-
-
       {/* =========================
-          PRODUITS
+          PROMOTION
       ========================= */}
-
       <section className="page home-products">
-
-        <div className="cards">
-
-          {products.map((product) => (
-
-            <ProductCard
-              key={product.id}
-              product={product}
-              onAddToCart={onAddToCart}
-              onBuyNow={onBuyNow}
-            />
-
-          ))}
-
         </div>
 
 
