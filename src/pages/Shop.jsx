@@ -12,7 +12,7 @@ import {
   FaArrowRight,
 } from "react-icons/fa";
 
-const products = [
+const baseProducts = [
   {
     id: 1,
     name: "iPhone X (10)",
@@ -423,6 +423,66 @@ const products = [
   },
 ];
 
+const expandedPhoneCatalog = [
+  ["iPhone", "iPhone 17 Pro", "$1,199", "https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-17-pro-1.jpg", "https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-17-pro-2.jpg"],
+  ["Samsung", "Galaxy A25 5G", "$279", "https://fdn2.gsmarena.com/vv/pics/samsung/samsung-galaxy-a15-5g-1.jpg", "https://fdn2.gsmarena.com/vv/pics/samsung/samsung-galaxy-a15-5g-2.jpg"],
+  ["Samsung", "Galaxy A36 5G", "$379", "https://fdn2.gsmarena.com/vv/pics/samsung/samsung-galaxy-a35-1.jpg", "https://fdn2.gsmarena.com/vv/pics/samsung/samsung-galaxy-a35-2.jpg"],
+  ["Samsung", "Galaxy A56 5G", "$499", "https://fdn2.gsmarena.com/vv/pics/samsung/samsung-galaxy-a55-1.jpg", "https://fdn2.gsmarena.com/vv/pics/samsung/samsung-galaxy-a55-2.jpg"],
+  ["Samsung", "Galaxy S25", "$899", "https://fdn2.gsmarena.com/vv/pics/samsung/samsung-galaxy-s23-5g-1.jpg", "https://fdn2.gsmarena.com/vv/pics/samsung/samsung-galaxy-s23-5g-2.jpg"],
+  ["Realme", "Realme 11 Pro+", "$329", "https://fdn2.gsmarena.com/vv/pics/realme/realme-11-pro-plus-1.jpg", "https://fdn2.gsmarena.com/vv/pics/realme/realme-11-pro-plus-2.jpg"],
+  ["Realme", "Realme 12 Pro+", "$399", "https://fdn2.gsmarena.com/vv/pics/realme/realme-12-pro-plus-1.jpg", "https://fdn2.gsmarena.com/vv/pics/realme/realme-12-pro-plus-2.jpg"],
+  ["Realme", "Realme 13 Pro+", "$429", "https://fdn2.gsmarena.com/vv/pics/realme/realme-13-pro-plus-1.jpg", "https://fdn2.gsmarena.com/vv/pics/realme/realme-13-pro-plus-2.jpg"],
+  ["Realme", "Realme GT 6", "$549", "https://fdn2.gsmarena.com/vv/pics/realme/realme-13-pro-plus-1.jpg", "https://fdn2.gsmarena.com/vv/pics/realme/realme-13-pro-plus-2.jpg"],
+  ["Realme", "Realme GT 7 Pro", "$699", "https://fdn2.gsmarena.com/vv/pics/realme/realme-12-pro-plus-1.jpg", "https://fdn2.gsmarena.com/vv/pics/realme/realme-12-pro-plus-2.jpg"],
+  ["Realme", "Realme 12 5G", "$249", "https://fdn2.gsmarena.com/vv/pics/realme/realme-12-pro-1.jpg", "https://fdn2.gsmarena.com/vv/pics/realme/realme-12-pro-2.jpg"],
+  ["Realme", "Realme C67", "$179", "https://fdn2.gsmarena.com/vv/pics/realme/realme-12-pro-1.jpg", "https://fdn2.gsmarena.com/vv/pics/realme/realme-12-pro-2.jpg"],
+  ["Realme", "Realme Narzo 70 Pro", "$299", "https://fdn2.gsmarena.com/vv/pics/realme/realme-13-pro-plus-1.jpg", "https://fdn2.gsmarena.com/vv/pics/realme/realme-13-pro-plus-2.jpg"],
+  ["RedMagic", "RedMagic 8 Pro", "$599", "https://fdn2.gsmarena.com/vv/pics/zte/zte-nubia-red-magic-10-pro-1.jpg", "https://fdn2.gsmarena.com/vv/pics/zte/zte-nubia-red-magic-10-pro-2.jpg"],
+  ["RedMagic", "RedMagic 9S Pro", "$699", "https://fdn2.gsmarena.com/vv/pics/zte/zte-nubia-red-magic-9s-pro-1.jpg", "https://fdn2.gsmarena.com/vv/pics/zte/zte-nubia-red-magic-10-pro-2.jpg"],
+  ["RedMagic", "RedMagic 7", "$499", "https://fdn2.gsmarena.com/vv/pics/zte/zte-nubia-red-magic-7-1.jpg", "https://fdn2.gsmarena.com/vv/pics/zte/zte-nubia-red-magic-7-2.jpg"],
+  ["RedMagic", "RedMagic 7S Pro", "$549", "https://fdn2.gsmarena.com/vv/pics/zte/zte-nubia-red-magic-7-1.jpg", "https://fdn2.gsmarena.com/vv/pics/zte/zte-nubia-red-magic-7-2.jpg"],
+  ["RedMagic", "RedMagic 6 Pro", "$399", "https://fdn2.gsmarena.com/vv/pics/zte/zte-nubia-red-magic-7-1.jpg", "https://fdn2.gsmarena.com/vv/pics/zte/zte-nubia-red-magic-7-2.jpg"],
+  ["RedMagic", "RedMagic 6R", "$349", "https://fdn2.gsmarena.com/vv/pics/zte/zte-nubia-red-magic-9-pro-1.jpg", "https://fdn2.gsmarena.com/vv/pics/zte/zte-nubia-red-magic-10-pro-2.jpg"],
+  ["RedMagic", "RedMagic 5G", "$299", "https://fdn2.gsmarena.com/vv/pics/zte/zte-nubia-red-magic-7-1.jpg", "https://fdn2.gsmarena.com/vv/pics/zte/zte-nubia-red-magic-7-2.jpg"],
+  ["RedMagic", "RedMagic 10 Air", "$599", "https://fdn2.gsmarena.com/vv/pics/zte/zte-nubia-red-magic-10-pro-1.jpg", "https://fdn2.gsmarena.com/vv/pics/zte/zte-nubia-red-magic-10-pro-2.jpg"],
+  ["Redmi", "Redmi Note 13", "$229", "https://fdn2.gsmarena.com/vv/pics/xiaomi/xiaomi-redmi-note-13-1.jpg", "https://fdn2.gsmarena.com/vv/pics/xiaomi/xiaomi-redmi-note-13-2.jpg"],
+  ["Redmi", "Redmi Note 12 Pro", "$279", "https://fdn2.gsmarena.com/vv/pics/xiaomi/xiaomi-redmi-note-12-pro-1.jpg", "https://fdn2.gsmarena.com/vv/pics/xiaomi/xiaomi-redmi-note-12-pro-2.jpg"],
+  ["Redmi", "Redmi K70", "$399", "https://fdn2.gsmarena.com/vv/pics/xiaomi/xiaomi-redmi-k70-1.jpg", "https://fdn2.gsmarena.com/vv/pics/xiaomi/xiaomi-redmi-k70-2.jpg"],
+  ["Redmi", "Redmi Note 14 Pro", "$329", "https://fdn2.gsmarena.com/vv/pics/xiaomi/xiaomi-redmi-note-14-pro-plus-5g-1.jpg", "https://fdn2.gsmarena.com/vv/pics/xiaomi/xiaomi-redmi-note-14-pro-plus-5g-2.jpg"],
+  ["Redmi", "Redmi 13C", "$159", "https://fdn2.gsmarena.com/vv/pics/xiaomi/xiaomi-redmi-note-13-1.jpg", "https://fdn2.gsmarena.com/vv/pics/xiaomi/xiaomi-redmi-note-13-2.jpg"],
+  ["Redmi", "Redmi Note 11 Pro", "$219", "https://fdn2.gsmarena.com/vv/pics/xiaomi/xiaomi-redmi-note-12-pro-1.jpg", "https://fdn2.gsmarena.com/vv/pics/xiaomi/xiaomi-redmi-note-12-pro-2.jpg"],
+  ["Redmi", "Redmi Note 10 Pro", "$199", "https://fdn2.gsmarena.com/vv/pics/xiaomi/xiaomi-redmi-note-13-1.jpg", "https://fdn2.gsmarena.com/vv/pics/xiaomi/xiaomi-redmi-note-13-2.jpg"],
+  ["Redmi", "Redmi K80", "$499", "https://fdn2.gsmarena.com/vv/pics/xiaomi/xiaomi-redmi-k70-1.jpg", "https://fdn2.gsmarena.com/vv/pics/xiaomi/xiaomi-redmi-k70-2.jpg"],
+  ["Xiaomi", "Xiaomi 13", "$599", "https://fdn2.gsmarena.com/vv/pics/xiaomi/xiaomi-14-1.jpg", "https://fdn2.gsmarena.com/vv/pics/xiaomi/xiaomi-14-2.jpg"],
+  ["Xiaomi", "Xiaomi 13 Pro", "$799", "https://fdn2.gsmarena.com/vv/pics/xiaomi/xiaomi-14-1.jpg", "https://fdn2.gsmarena.com/vv/pics/xiaomi/xiaomi-14-2.jpg"],
+  ["Xiaomi", "Xiaomi 14T", "$549", "https://fdn2.gsmarena.com/vv/pics/xiaomi/xiaomi-14t-1.jpg", "https://fdn2.gsmarena.com/vv/pics/xiaomi/xiaomi-14t-2.jpg"],
+  ["Xiaomi", "Xiaomi 14T Pro", "$749", "https://fdn2.gsmarena.com/vv/pics/xiaomi/xiaomi-14t-pro-1.jpg", "https://fdn2.gsmarena.com/vv/pics/xiaomi/xiaomi-14t-pro-2.jpg"],
+  ["Xiaomi", "Xiaomi 13T", "$499", "https://fdn2.gsmarena.com/vv/pics/xiaomi/xiaomi-14t-1.jpg", "https://fdn2.gsmarena.com/vv/pics/xiaomi/xiaomi-14t-2.jpg"],
+  ["Xiaomi", "Xiaomi 12", "$399", "https://fdn2.gsmarena.com/vv/pics/xiaomi/xiaomi-14-1.jpg", "https://fdn2.gsmarena.com/vv/pics/xiaomi/xiaomi-14-2.jpg"],
+  ["Xiaomi", "Xiaomi 12 Pro", "$499", "https://fdn2.gsmarena.com/vv/pics/xiaomi/xiaomi-14t-pro-1.jpg", "https://fdn2.gsmarena.com/vv/pics/xiaomi/xiaomi-14t-pro-2.jpg"],
+  ["Xiaomi", "Xiaomi Mi 11", "$299", "https://fdn2.gsmarena.com/vv/pics/xiaomi/xiaomi-14-1.jpg", "https://fdn2.gsmarena.com/vv/pics/xiaomi/xiaomi-14-2.jpg"],
+  ["Oppo", "Oppo Reno 11", "$379", "https://fdn2.gsmarena.com/vv/pics/oppo/oppo-find-x8-1.jpg", "https://fdn2.gsmarena.com/vv/pics/oppo/oppo-find-x8-2.jpg"],
+  ["Oppo", "Oppo Find X8", "$799", "https://fdn2.gsmarena.com/vv/pics/oppo/oppo-find-x8-1.jpg", "https://fdn2.gsmarena.com/vv/pics/oppo/oppo-find-x8-2.jpg"],
+  ["Oppo", "Oppo Find X7 Ultra", "$899", "https://fdn2.gsmarena.com/vv/pics/oppo/oppo-find-x7-ultra-1.jpg", "https://fdn2.gsmarena.com/vv/pics/oppo/oppo-find-x7-ultra-2.jpg"],
+  ["Oppo", "Oppo A79", "$229", "https://fdn2.gsmarena.com/vv/pics/oppo/oppo-find-x8-1.jpg", "https://fdn2.gsmarena.com/vv/pics/oppo/oppo-find-x8-2.jpg"],
+  ["Oppo", "Oppo Reno 10 Pro", "$499", "https://fdn2.gsmarena.com/vv/pics/oppo/oppo-find-x7-ultra-1.jpg", "https://fdn2.gsmarena.com/vv/pics/oppo/oppo-find-x7-ultra-2.jpg"],
+  ["Oppo", "Oppo Reno 10", "$349", "https://fdn2.gsmarena.com/vv/pics/oppo/oppo-find-x8-1.jpg", "https://fdn2.gsmarena.com/vv/pics/oppo/oppo-find-x8-2.jpg"],
+  ["Oppo", "Oppo A98", "$299", "https://fdn2.gsmarena.com/vv/pics/oppo/oppo-find-x7-ultra-1.jpg", "https://fdn2.gsmarena.com/vv/pics/oppo/oppo-find-x7-ultra-2.jpg"],
+  ["Oppo", "Oppo F25 Pro", "$329", "https://fdn2.gsmarena.com/vv/pics/oppo/oppo-find-x8-1.jpg", "https://fdn2.gsmarena.com/vv/pics/oppo/oppo-find-x8-2.jpg"],
+  ["Oppo", "Oppo Find N3", "$1,099", "https://fdn2.gsmarena.com/vv/pics/oppo/oppo-find-x7-ultra-1.jpg", "https://fdn2.gsmarena.com/vv/pics/oppo/oppo-find-x7-ultra-2.jpg"],
+].map(([brand, name, price, image, backImage], index) => ({
+  id: 100 + index,
+  name,
+  price,
+  description: `${brand} ${name} avec image face et dos, modèle sélectionné.`,
+  category: "phones",
+  image,
+  backImage,
+  rating: 5,
+}));
+
+const products = [...baseProducts, ...expandedPhoneCatalog];
+
 const categories = [
   {
     slug: "phones",
@@ -468,12 +528,17 @@ const phoneBrands = [
   {
     slug: "redmi",
     name: "Redmi",
-    image: "https://fdn2.gsmarena.com/vv/pics/xiaomi/xiaomi-redmi-note-14-pro-plus-1.jpg",
+    image: "https://fdn2.gsmarena.com/vv/pics/xiaomi/xiaomi-redmi-note-14-pro-plus-5g-1.jpg",
   },
   {
     slug: "xiaomi",
     name: "Xiaomi",
     image: "https://fdn2.gsmarena.com/vv/pics/xiaomi/xiaomi-14-1.jpg",
+  },
+  {
+    slug: "oppo",
+    name: "Oppo",
+    image: "https://fdn2.gsmarena.com/vv/pics/oppo/oppo-find-x8-1.jpg",
   },
 ];
 
