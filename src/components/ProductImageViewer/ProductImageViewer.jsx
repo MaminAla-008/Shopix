@@ -70,7 +70,15 @@ const ProductImageViewer = ({ product, className = "" }) => {
             </div>
 
             <div className="product-viewer-image-wrap">
-              <img src={displayedImage} alt={`${product.name} - ${view}`} />
+              <img
+                src={displayedImage}
+                alt={`${product.name} - ${view}`}
+                onError={(event) => {
+                  if (view === "back") {
+                    event.currentTarget.src = frontImage;
+                  }
+                }}
+              />
             </div>
 
             {isPhone && (

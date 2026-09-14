@@ -21,7 +21,7 @@ const products = [
       "Design compact, écran Retina et appareil photo double objectif.",
     category: "phones",
     image:
-      "https://www.apple.com/newsroom/images/product/iphone/iphone-x/Apple_iPhone-X_New-Design_09122017_big.jpg.large.jpg",
+      "https://fdn.gsmarena.com/imgroot/reviews/17/apple-iphone-x/thumb/-728x314/gsmarena_001.jpg",
     rating: 4,
   },
   {
@@ -43,7 +43,7 @@ const products = [
       "Écran OLED, 5G et design à bords plats.",
     category: "phones",
     image:
-      "https://www.apple.com/newsroom/images/product/iphone/standard/Apple_iPhone-12_new-design_09152020_big.jpg.large.jpg",
+      "https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-12-2.jpg",
     rating: 5,
   },
   {
@@ -54,7 +54,7 @@ const products = [
       "Autonomie améliorée, caméra avancée et écran Super Retina.",
     category: "phones",
     image:
-      "https://www.apple.com/newsroom/images/product/iphone/standard/Apple_iPhone-13_new-design_09142021_big.jpg.large.jpg",
+      "https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-13-2.jpg",
     rating: 5,
   },
   {
@@ -103,13 +103,13 @@ const products = [
   },
   {
     id: 9,
-    name: "iPhone 18",
-    price: "$1,199",
+    name: "iPhone 17 Pro Max",
+    price: "$1,299",
     description:
       "Modèle premium, écran immersif et performances ultra rapides.",
     category: "phones",
     image:
-      "https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-18-1.jpg",
+      "https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-17-pro-max-1.jpg",
     rating: 5,
   },
   {
@@ -164,7 +164,7 @@ const products = [
       "Galaxy AI, écran Dynamic AMOLED et performances premium.",
     category: "phones",
     image:
-      "https://fdn2.gsmarena.com/vv/pics/samsung/samsung-galaxy-s24-5g-1.jpg",
+      "https://fdn.gsmarena.com/imgroot/reviews/24/samsung-galaxy-s24/-1220x526/gsmarena_001.jpg",
     rating: 5,
   },
   {
@@ -175,7 +175,7 @@ const products = [
       "Grand écran, stylet intégré et zoom photo professionnel.",
     category: "phones",
     image:
-      "https://fdn2.gsmarena.com/vv/pics/samsung/samsung-galaxy-s25-ultra-5g-1.jpg",
+      "https://fdn.gsmarena.com/imgroot/reviews/25/samsung-galaxy-s25-ultra/-1220x526/gsmarena_002.jpg",
     rating: 5,
   },
   {
@@ -307,7 +307,7 @@ const products = [
       "Écouteurs violets avec audio 360 degrés et résistance à l’eau.",
     category: "earbuds",
     image:
-      "https://images.unsplash.com/photo-1588423771073-1edd975b7f5d",
+      "https://images.unsplash.com/photo-1590658268037-6bf12165a8df",
     rating: 5,
   },
   {
@@ -350,7 +350,7 @@ const categories = [
     slug: "phones",
     name: "Téléphone portable",
     image:
-      "https://images.unsplash.com/photo-1510552776732-01aa75f1e7ce",
+      "https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-11-1.jpg",
   },
   {
     slug: "headphones",
