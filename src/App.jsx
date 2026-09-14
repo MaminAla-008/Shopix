@@ -80,7 +80,12 @@ function App() {
 
   const handleDisconnect = () => {
     setAccount(null);
-    window.localStorage.removeItem("shopio-account");
+    setPendingAction(null);
+
+    if (typeof window !== "undefined") {
+      window.localStorage.removeItem("shopio-account");
+    }
+
     setSuccessMessage("Compte déconnecté.");
   };
 
