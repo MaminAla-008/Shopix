@@ -1,5 +1,6 @@
 import "../styles/pages.scss";
 import "../styles/info.scss";
+import { Link } from "react-router-dom";
 
 
 const infoCards = [
@@ -38,7 +39,7 @@ const Pages = () => {
           <article className="info-card" key={item.title}>
             <h3>{item.title}</h3>
             <p>{item.text}</p>
-            <a href="#">En savoir plus</a>
+            <Link to="/shop">En savoir plus</Link>
           </article>
         ))}
       </div>

@@ -20,10 +20,10 @@ const Navbar = ({ cartCount, account, onOpenAccount, onDisconnect }) => {
           <div className="promo">✨ Soldes Black Friday 22% de réduction ✨</div>
 
           <div className="links">
-            <Link to="/shipping">Livraison</Link>
-            <Link to="/returns">Retours</Link>
-            <Link to="/warranty">Garantie</Link>
-            <Link to="/contact">Contact</Link>
+            <Link to="/pages">Livraison</Link>
+            <Link to="/pages">Retours</Link>
+            <Link to="/pages">Garantie</Link>
+            <Link to="/pages">Contact</Link>
           </div>
         </div>
       </div>
@@ -81,7 +81,7 @@ const Navbar = ({ cartCount, account, onOpenAccount, onDisconnect }) => {
           </div>
 
           <div className="icons">
-            <Link to="/wishlist">
+            <Link to="/shop" title="Découvrir les produits">
               <FaHeart />
             </Link>
 

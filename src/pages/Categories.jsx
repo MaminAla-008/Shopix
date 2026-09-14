@@ -1,3 +1,5 @@
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "../styles/category.scss";
 
 const categories = [
@@ -19,6 +21,12 @@ const categories = [
 ];
 
 function Categories() {
+  const navigate = useNavigate();
+  const [query, setQuery] = useState("");
+  const visibleCategories = categories.filter((item) =>
+    item.name.toLowerCase().includes(query.trim().toLowerCase())
+  );
+
   return (
     <div className="category-page">
       <section className="category-hero">
@@ -32,9 +40,21 @@ function Categories() {
 
           <div className="hero-actions">
             <div className="search-box">
-              <input type="text" placeholder="Rechercher une catégorie..." />
+              <input
+                type="search"
+                placeholder="Rechercher une catégorie..."
+                value={query}
+                onChange={(event) => setQuery(event.target.value)}
+                aria-label="Rechercher une catégorie"
+              />
             </div>
-            <button className="ghost-btn">Explorer</button>
+            <button
+              type="button"
+              className="ghost-btn"
+              onClick={() => navigate("/shop")}
+            >
+              Explorer
+            </button>
           </div>
         </div>
 
@@ -55,17 +75,22 @@ function Categories() {
       </section>
 
       <section className="category-grid">
-        {categories.map((item) => (
+        {visibleCategories.map((item) => (
           <article className="category-card" key={item.id}>
             <img src={item.image} alt={item.name} />
 
             <div className="overlay">
               <h2>{item.name}</h2>
               <p>Équipements tendance</p>
-              <button>Voir la sélection</button>
+              <button type="button" onClick={() => navigate("/shop")}>
+                Voir la sélection
+              </button>
             </div>
           </article>
         ))}
+        {visibleCategories.length === 0 && (
+          <p className="category-empty">Aucune catégorie ne correspond à votre recherche.</p>
+        )}
       </section>
     </div>
   );

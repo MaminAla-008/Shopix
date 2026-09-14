@@ -1,4 +1,5 @@
 import "./Hero.scss";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
@@ -16,8 +17,8 @@ const Hero = () => {
         </p>
 
         <div className="hero-actions">
-          <button>Voir la boutique</button>
-          <a href="/categories">Voir les catégories</a>
+          <Link to="/shop" className="hero-shop-link">Voir la boutique</Link>
+          <Link to="/categories">Voir les catégories</Link>
         </div>
       </div>
 

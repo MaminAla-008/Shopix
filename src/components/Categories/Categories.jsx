@@ -1,4 +1,5 @@
 import "./Categories.scss";
+import { Link } from "react-router-dom";
 
 import {
   FaMobileAlt,
@@ -37,7 +38,7 @@ const Categories = () => {
 
           <h2>Par catégories</h2>
 
-          <a href="/">Voir tout</a>
+          <Link to="/categories">Voir tout</Link>
 
         </div>
 

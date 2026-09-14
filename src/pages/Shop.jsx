@@ -1,3 +1,4 @@
+import { useState } from "react";
 import "../styles/Shop.scss";
 import {
   FaStar,
@@ -126,6 +127,20 @@ export default function Shop({
   message,
   clearMessage,
 }) {
+  const [newsletterEmail, setNewsletterEmail] = useState("");
+  const [newsletterMessage, setNewsletterMessage] = useState("");
+
+  const handleNewsletterSubmit = (event) => {
+    event.preventDefault();
+    if (!newsletterEmail.trim()) {
+      setNewsletterMessage("Veuillez saisir votre adresse email.");
+      return;
+    }
+
+    setNewsletterMessage("Merci, votre inscription est confirmée.");
+    setNewsletterEmail("");
+  };
+
   return (
     <div className="shop-page">
 
@@ -475,13 +490,15 @@ export default function Shop({
 
         <form
           className="newsletter-box"
-          onSubmit={(e) => e.preventDefault()}
+          onSubmit={handleNewsletterSubmit}
         >
 
           <input
             type="email"
             placeholder="Entrez votre email"
             aria-label="Votre adresse email"
+            value={newsletterEmail}
+            onChange={(event) => setNewsletterEmail(event.target.value)}
           />
 
           <button type="submit">
@@ -489,6 +506,10 @@ export default function Shop({
           </button>
 
         </form>
+
+        {newsletterMessage && (
+          <p className="account-message">{newsletterMessage}</p>
+        )}
 
       </section>
 

@@ -1,4 +1,5 @@
 import "../styles/deals.scss";
+import { useNavigate } from "react-router-dom";
 
 const deals = [
   {
@@ -28,6 +29,8 @@ const deals = [
 ];
 
 const Deals = () => {
+  const navigate = useNavigate();
+
   return (
     <section className="deals-page">
       <div className="deals-intro">
@@ -50,7 +53,9 @@ const Deals = () => {
                 <li key={feature}>{feature}</li>
               ))}
             </ul>
-            <button>{deal.cta}</button>
+            <button type="button" onClick={() => navigate("/shop")}>
+              {deal.cta}
+            </button>
           </article>
         ))}
       </div>
