@@ -12,26 +12,32 @@ const Home = ({
   const products = [
     {
       id: 1,
-      name: "Samsung Galaxy A15",
-      price: "199$",
+      name: "Samsung Galaxy A55 5G",
+      price: "$449",
       description:
-        'Écran 6,5" AMOLED, 128 Go, batterie 5000 mAh, triple caméra.',
+        "Écran AMOLED 120 Hz, appareil photo polyvalent et grande autonomie.",
+      category: "phones",
       image:
-        "https://images.unsplash.com/photo-1610945265064-0e34e5519bbf",
+        "https://fdn2.gsmarena.com/vv/pics/samsung/samsung-galaxy-a55-1.jpg",
+      backImage:
+        "https://fdn2.gsmarena.com/vv/pics/samsung/samsung-galaxy-a55-2.jpg",
     },
     {
       id: 2,
       name: "iPhone 15",
-      price: "899$",
+      price: "$899",
       description:
-        "Puce A16 Bionic, appareil photo 48 MP, Dynamic Island.",
+        "Puce A16 Bionic, appareil photo 48 MP et port USB-C.",
+      category: "phones",
       image:
-        "https://images.unsplash.com/photo-1592750475338-74b7b21085ab",
+        "https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-15-1.jpg",
+      backImage:
+        "https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-15-2.jpg",
     },
     {
       id: 3,
       name: "Casque Bluetooth JBL",
-      price: "79$",
+      price: "$79",
       description:
         "Son puissant, réduction de bruit, autonomie 30 heures.",
       image:
@@ -39,30 +45,35 @@ const Home = ({
     },
     {
       id: 4,
-      name: "Xiaomi Redmi Note 13",
-      price: "249$",
+      name: "Redmi Note 13 Pro",
+      price: "$299",
       description:
         "Écran 120 Hz, 8 Go RAM, charge rapide 33 W, caméra 108 MP.",
+      category: "phones",
       image:
-        "https://images.unsplash.com/photo-1580910051074-3eb694886505",
+        "https://fdn2.gsmarena.com/vv/pics/xiaomi/xiaomi-redmi-note-13-pro-1.jpg",
+      backImage:
+        "https://fdn2.gsmarena.com/vv/pics/xiaomi/xiaomi-redmi-note-13-2.jpg",
     },
     {
       id: 5,
       name: "Écouteurs sans fil AirPods",
-      price: "149$",
+      price: "$149",
       description:
         "Audio spatial, étui de charge, connectivité instantanée.",
       image:
         "https://images.unsplash.com/photo-1606220945770-b5b6c2c55bf1",
+      category: "earbuds",
     },
     {
       id: 6,
       name: "Sony WH-1000XM5",
-      price: "349$",
+      price: "$349",
       description:
         "Casque Bluetooth avec réduction de bruit et son haute résolution.",
       image:
         "https://images.unsplash.com/photo-1599669454699-248893623440",
+      category: "headphones",
     },
   ];
 

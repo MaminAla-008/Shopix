@@ -8,7 +8,9 @@ const ProductCard = ({ product, onAddToCart, onBuyNow }) => {
 
       <h3>{product.name}</h3>
       <p className="product-description">{product.description}</p>
-      <p className="product-price">{product.price} $</p>
+      <p className="product-price">
+        {String(product.price).includes("$") ? product.price : `${product.price} $`}
+      </p>
 
       <button type="button" onClick={() => onAddToCart?.(product)}>
         Ajouter au panier

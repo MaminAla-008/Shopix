@@ -700,8 +700,8 @@ export default function Shop({
           <div className="hero-glow"></div>
 
           <img
-            src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9"
-            alt="Smartphone premium"
+            src="https://fdn2.gsmarena.com/vv/pics/google/google-pixel-9-pro-xl-1.jpg"
+            alt="Google Pixel 9 Pro XL"
           />
 
         </div>
