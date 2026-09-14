@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
+import Hero from "../components/Hero/Hero";
 import "../styles/Shop.scss";
 import ProductImageViewer from "../components/ProductImageViewer/ProductImageViewer";
 import {
@@ -610,103 +611,7 @@ export default function Shop({
   return (
     <div className="shop-page">
 
-      {/* =========================
-          HERO
-      ========================= */}
-      <section className="hero">
-
- <div className="hero-content">
-
-  <span className="hero-badge">
-    <FaBolt />
-    Collection exclusive 2026
-  </span>
-
-  <h1>
-    L’excellence à portée de clic.
-    <span> Découvrez nos produits premium.</span>
-  </h1>
-
-  <p>
-    Profitez d’une sélection soigneusement choisie, de prix
-    attractifs et d’une expérience shopping rapide, simple
-    et sécurisée.
-  </p>
-
-  <div className="hero-actions">
-
-    <button
-      type="button"
-      className="shop-primary-btn"
-      onClick={() => onBuyNow?.(products[0])}
-    >
-      <FaBolt />
-      Acheter maintenant
-    </button>
-
-    <button
-      type="button"
-      className="shop-secondary-btn"
-      onClick={() =>
-        document
-          .getElementById("products")
-          ?.scrollIntoView({ behavior: "smooth" })
-      }
-    >
-      Explorer la boutique
-      <FaArrowRight />
-    </button>
-
-  </div>
-
-  <div className="hero-features">
-
-    <div className="hero-feature">
-      <div className="feature-icon">
-        <FaTruck />
-      </div>
-      <div>
-        <strong>Livraison rapide</strong>
-        <span>Partout à Madagascar</span>
-      </div>
-    </div>
-
-    <div className="hero-feature">
-      <div className="feature-icon">
-        <FaShieldAlt />
-      </div>
-      <div>
-        <strong>Paiement sécurisé</strong>
-        <span>Transactions protégées</span>
-      </div>
-    </div>
-
-    <div className="hero-feature">
-      <div className="feature-icon">
-        <FaHeadset />
-      </div>
-      <div>
-        <strong>Support disponible</strong>
-        <span>Une équipe à votre écoute</span>
-      </div>
-    </div>
-
-  </div>
-
-</div>
-
-        <div className="hero-image">
-
-          <div className="hero-glow"></div>
-
-          <img
-            src="https://fdn2.gsmarena.com/vv/pics/google/google-pixel-9-pro-xl-1.jpg"
-            alt="Google Pixel 9 Pro XL"
-          />
-
-        </div>
-
-      </section>
+      <Hero />
 
       <section className="categories phone-brands">
 
