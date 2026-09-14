@@ -14,13 +14,13 @@ import {
 const products = [
   {
     id: 1,
-    name: "iPhone 10",
+    name: "iPhone X (10)",
     price: "$399",
     description:
       "Design compact, écran Retina et appareil photo double objectif.",
     category: "phones",
     image:
-      "https://images.unsplash.com/photo-1592750475338-74b7b21085ab",
+      "https://www.apple.com/newsroom/images/product/iphone/iphone-x/Apple_iPhone-X_New-Design_09122017_big.jpg.large.jpg",
     rating: 4,
   },
   {
@@ -31,7 +31,7 @@ const products = [
       "Puce A13 Bionic, double appareil photo et finition colorée.",
     category: "phones",
     image:
-      "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9",
+      "https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-11-1.jpg",
     rating: 4,
   },
   {
@@ -42,7 +42,7 @@ const products = [
       "Écran OLED, 5G et design à bords plats.",
     category: "phones",
     image:
-      "https://images.unsplash.com/photo-1610945265064-0e34e5519bbf",
+      "https://www.apple.com/newsroom/images/product/iphone/standard/Apple_iPhone-12_new-design_09152020_big.jpg.large.jpg",
     rating: 5,
   },
   {
@@ -53,7 +53,7 @@ const products = [
       "Autonomie améliorée, caméra avancée et écran Super Retina.",
     category: "phones",
     image:
-      "https://images.unsplash.com/photo-1592750475338-74b7b21085ab",
+      "https://www.apple.com/newsroom/images/product/iphone/standard/Apple_iPhone-13_new-design_09142021_big.jpg.large.jpg",
     rating: 5,
   },
   {
@@ -64,7 +64,7 @@ const products = [
       "Détection des accidents, caméra 12 MP et puce performante.",
     category: "phones",
     image:
-      "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9",
+      "https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-14-1.jpg",
     rating: 5,
   },
   {
@@ -75,7 +75,7 @@ const products = [
       "Puce A16 Bionic, appareil photo 48 MP et port USB-C.",
     category: "phones",
     image:
-      "https://images.unsplash.com/photo-1592750475338-74b7b21085ab",
+      "https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-15-1.jpg",
     rating: 5,
   },
   {
@@ -86,7 +86,7 @@ const products = [
       "Écran lumineux, caméra Fusion et performances nouvelle génération.",
     category: "phones",
     image:
-      "https://images.unsplash.com/photo-1610945265064-0e34e5519bbf",
+      "https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-16-1.jpg",
     rating: 5,
   },
   {
@@ -97,7 +97,7 @@ const products = [
       "Smartphone premium avec grande autonomie et caméra professionnelle.",
     category: "phones",
     image:
-      "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9",
+      "https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-17-1.jpg",
     rating: 5,
   },
   {
@@ -108,7 +108,7 @@ const products = [
       "Modèle premium, écran immersif et performances ultra rapides.",
     category: "phones",
     image:
-      "https://images.unsplash.com/photo-1592750475338-74b7b21085ab",
+      "https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-18-1.jpg",
     rating: 5,
   },
   {
@@ -119,7 +119,7 @@ const products = [
       'Écran 6,5 pouces AMOLED, 128 Go et batterie 5000 mAh.',
     category: "phones",
     image:
-      "https://images.unsplash.com/photo-1610945265064-0e34e5519bbf",
+      "https://fdn2.gsmarena.com/vv/pics/samsung/samsung-galaxy-a15-5g-1.jpg",
     rating: 5,
   },
   {
@@ -130,7 +130,7 @@ const products = [
       "Écran AMOLED 120 Hz, appareil photo polyvalent et 5G.",
     category: "phones",
     image:
-      "https://images.unsplash.com/photo-1580910051074-3eb694886505",
+      "https://fdn2.gsmarena.com/vv/pics/samsung/samsung-galaxy-a35-1.jpg",
     rating: 4,
   },
   {
@@ -141,7 +141,7 @@ const products = [
       "Design métal, grande autonomie et caméra haute résolution.",
     category: "phones",
     image:
-      "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9",
+      "https://fdn2.gsmarena.com/vv/pics/samsung/samsung-galaxy-a55-1.jpg",
     rating: 5,
   },
   {
@@ -152,7 +152,7 @@ const products = [
       "Compact, rapide et équipé d’un appareil photo professionnel.",
     category: "phones",
     image:
-      "https://images.unsplash.com/photo-1592750475338-74b7b21085ab",
+      "https://fdn2.gsmarena.com/vv/pics/samsung/samsung-galaxy-s23-5g-1.jpg",
     rating: 5,
   },
   {
@@ -163,7 +163,7 @@ const products = [
       "Galaxy AI, écran Dynamic AMOLED et performances premium.",
     category: "phones",
     image:
-      "https://images.unsplash.com/photo-1610945265064-0e34e5519bbf",
+      "https://fdn2.gsmarena.com/vv/pics/samsung/samsung-galaxy-s24-5g-1.jpg",
     rating: 5,
   },
   {
@@ -174,7 +174,7 @@ const products = [
       "Grand écran, stylet intégré et zoom photo professionnel.",
     category: "phones",
     image:
-      "https://images.unsplash.com/photo-1580910051074-3eb694886505",
+      "https://fdn2.gsmarena.com/vv/pics/samsung/samsung-galaxy-s25-ultra-5g-1.jpg",
     rating: 5,
   },
   {
@@ -185,7 +185,7 @@ const products = [
       "Écran AMOLED 120 Hz, caméra portrait et charge rapide 80 W.",
     category: "phones",
     image:
-      "https://images.unsplash.com/photo-1556656793-08538906a9f8",
+      "https://fdn2.gsmarena.com/vv/pics/oppo/oppo-reno12-1.jpg",
     rating: 4,
   },
   {
@@ -196,7 +196,7 @@ const products = [
       "Smartphone 5G, écran incurvé et caméra avec zoom portrait.",
     category: "phones",
     image:
-      "https://images.unsplash.com/photo-1523206489230-c012c64b2b48",
+      "https://fdn2.gsmarena.com/vv/pics/realme/realme-12-pro-1.jpg",
     rating: 4,
   },
   {
@@ -207,7 +207,7 @@ const products = [
       "Écran AMOLED 120 Hz, caméra 200 MP et batterie longue durée.",
     category: "phones",
     image:
-      "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9",
+      "https://fdn2.gsmarena.com/vv/pics/xiaomi/xiaomi-redmi-note-13-pro-1.jpg",
     rating: 5,
   },
   {
