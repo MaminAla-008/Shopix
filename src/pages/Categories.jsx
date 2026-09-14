@@ -3,32 +3,17 @@ import "../styles/category.scss";
 const categories = [
   {
     id: 1,
-    name: "Smartphones",
+    name: "Téléphone portable",
     image: "https://images.unsplash.com/photo-1510552776732-01aa75f1e7ce?auto=format&fit=crop&w=900&q=80",
   },
   {
     id: 2,
-    name: "Ordinateurs",
-    image: "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?auto=format&fit=crop&w=900&q=80",
+    name: "Casque Bluetooth",
+    image: "https://images.unsplash.com/photo-1546435770-a3e426bf472b?auto=format&fit=crop&w=900&q=80",
   },
   {
     id: 3,
-    name: "Audio",
-    image: "https://images.unsplash.com/photo-1518441902117-90e1d6c5ad47?auto=format&fit=crop&w=900&q=80",
-  },
-  {
-    id: 4,
-    name: "Gaming",
-    image: "https://images.unsplash.com/photo-1511512578047-dfb367046420?auto=format&fit=crop&w=900&q=80",
-  },
-  {
-    id: 5,
-    name: "Montres",
-    image: "https://images.unsplash.com/photo-1516574187841-cb9cc2ca948b?auto=format&fit=crop&w=900&q=80",
-  },
-  {
-    id: 6,
-    name: "Accessoires",
+    name: "Accessoires sans marque",
     image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=900&q=80",
   },
 ];

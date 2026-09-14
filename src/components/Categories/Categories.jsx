@@ -2,50 +2,29 @@ import "./Categories.scss";
 
 import {
   FaMobileAlt,
-  FaLaptop,
   FaHeadphones,
-  FaGamepad,
-  FaClock,
-  FaCamera
+  FaTag,
 } from "react-icons/fa";
 
 const data = [
   {
-    id:1,
-    icon:<FaMobileAlt/>,
-    title:"Smartphones",
-    items:"128 produits"
+    id: 1,
+    icon: <FaMobileAlt />,
+    title: "Téléphone portable",
+    items: "128 produits",
   },
   {
-    id:2,
-    icon:<FaLaptop/>,
-    title:"Ordinateurs portables",
-    items:"76 produits"
+    id: 2,
+    icon: <FaHeadphones />,
+    title: "Casque Bluetooth",
+    items: "58 produits",
   },
   {
-    id:3,
-    icon:<FaHeadphones/>,
-    title:"Casques audio",
-    items:"58 produits"
+    id: 3,
+    icon: <FaTag />,
+    title: "Accessoires sans marque",
+    items: "33 produits",
   },
-  {
-    id:4,
-    icon:<FaClock/>,
-    title:"Montres connectées",
-    items:"42 produits"
-  },
-  {
-    id:5,
-    icon:<FaGamepad/>,
-    title:"Gaming",
-    items:"95 produits"
-  },
-  {
-    id:6,
-    icon:<FaCamera/>,
-    title:"Appareils photo",
-    items:"33 produits"
-  }
 ];
 
 const Categories = () => {

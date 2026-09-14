@@ -104,22 +104,17 @@ const products = [
 
 const categories = [
   {
-    name: "Électronique",
+    name: "Téléphone portable",
     image:
-      "https://images.unsplash.com/photo-1496181133206-80ce9b88a853",
+      "https://images.unsplash.com/photo-1510552776732-01aa75f1e7ce",
   },
   {
-    name: "Mode",
+    name: "Casque Bluetooth",
     image:
-      "https://images.unsplash.com/photo-1483985988355-763728e1935b",
+      "https://images.unsplash.com/photo-1546435770-a3e426bf472b",
   },
   {
-    name: "Gaming",
-    image:
-      "https://images.unsplash.com/photo-1511512578047-dfb367046420",
-  },
-  {
-    name: "Accessoires",
+    name: "Accessoires sans marque",
     image:
       "https://images.unsplash.com/photo-1523275335684-37898b6baf30",
   },
