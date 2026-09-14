@@ -14,6 +14,7 @@ import Cart from "./pages/Cart";
 import Admin from "./pages/Admin";
 import ThankYou from "./pages/ThankYou";
 import AccountOrders from "./pages/AccountOrders";
+import Profile from "./pages/Profile";
 
 function App() {
   const navigate = useNavigate();
@@ -459,6 +460,17 @@ function App() {
           element={
             <AccountOrders
               account={account}
+            />
+          }
+        />
+
+        <Route
+          path="/profile"
+          element={
+            <Profile
+              account={account}
+              onOpenAccount={() => openAccountModal()}
+              onDisconnect={handleDisconnect}
             />
           }
         />

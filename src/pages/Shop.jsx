@@ -470,6 +470,16 @@ const expandedPhoneCatalog = [
   ["Oppo", "Oppo A98", "$299", "https://fdn2.gsmarena.com/vv/pics/oppo/oppo-find-x7-ultra-1.jpg", "https://fdn2.gsmarena.com/vv/pics/oppo/oppo-find-x7-ultra-2.jpg"],
   ["Oppo", "Oppo F25 Pro", "$329", "https://fdn2.gsmarena.com/vv/pics/oppo/oppo-find-x8-1.jpg", "https://fdn2.gsmarena.com/vv/pics/oppo/oppo-find-x8-2.jpg"],
   ["Oppo", "Oppo Find N3", "$1,099", "https://fdn2.gsmarena.com/vv/pics/oppo/oppo-find-x7-ultra-1.jpg", "https://fdn2.gsmarena.com/vv/pics/oppo/oppo-find-x7-ultra-2.jpg"],
+  ["Pixel", "Google Pixel 9 Pro XL", "$1,099", "https://fdn2.gsmarena.com/vv/pics/google/google-pixel-9-pro-xl-1.jpg", "https://fdn2.gsmarena.com/vv/pics/google/google-pixel-9-pro-xl-2.jpg"],
+  ["Pixel", "Google Pixel 9 Pro", "$999", "https://fdn2.gsmarena.com/vv/pics/google/google-pixel-9-pro-xl-1.jpg", "https://fdn2.gsmarena.com/vv/pics/google/google-pixel-9-pro-xl-2.jpg"],
+  ["Pixel", "Google Pixel 9", "$799", "https://fdn2.gsmarena.com/vv/pics/google/google-pixel-9-1.jpg", "https://fdn2.gsmarena.com/vv/pics/google/google-pixel-9-1.jpg"],
+  ["Pixel", "Google Pixel 8 Pro", "$799", "https://fdn2.gsmarena.com/vv/pics/google/google-pixel-8-pro-1.jpg", "https://fdn2.gsmarena.com/vv/pics/google/google-pixel-8-pro-1.jpg"],
+  ["Pixel", "Google Pixel 8", "$599", "https://fdn2.gsmarena.com/vv/pics/google/google-pixel-8-1.jpg", "https://fdn2.gsmarena.com/vv/pics/google/google-pixel-8-1.jpg"],
+  ["Pixel", "Google Pixel 7 Pro", "$649", "https://fdn2.gsmarena.com/vv/pics/google/google-pixel-9-pro-xl-1.jpg", "https://fdn2.gsmarena.com/vv/pics/google/google-pixel-9-pro-xl-2.jpg"],
+  ["Pixel", "Google Pixel 7", "$499", "https://fdn2.gsmarena.com/vv/pics/google/google-pixel-8-1.jpg", "https://fdn2.gsmarena.com/vv/pics/google/google-pixel-8-1.jpg"],
+  ["Pixel", "Google Pixel 6 Pro", "$499", "https://fdn2.gsmarena.com/vv/pics/google/google-pixel-6-pro-1.jpg", "https://fdn2.gsmarena.com/vv/pics/google/google-pixel-6-1.jpg"],
+  ["Pixel", "Google Pixel 6", "$399", "https://fdn2.gsmarena.com/vv/pics/google/google-pixel-6-1.jpg", "https://fdn2.gsmarena.com/vv/pics/google/google-pixel-6-1.jpg"],
+  ["Pixel", "Google Pixel 4 XL", "$299", "https://fdn2.gsmarena.com/vv/pics/google/google-pixel-4-xl-1.jpg", "https://fdn2.gsmarena.com/vv/pics/google/google-pixel-4-xl-1.jpg"],
 ].map(([brand, name, price, image, backImage], index) => ({
   id: 100 + index,
   name,
@@ -539,6 +549,11 @@ const phoneBrands = [
     slug: "oppo",
     name: "Oppo",
     image: "https://fdn2.gsmarena.com/vv/pics/oppo/oppo-find-x8-1.jpg",
+  },
+  {
+    slug: "pixel",
+    name: "Google Pixel",
+    image: "https://fdn2.gsmarena.com/vv/pics/google/google-pixel-9-pro-xl-1.jpg",
   },
 ];
 

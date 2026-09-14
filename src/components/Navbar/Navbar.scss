@@ -97,6 +97,21 @@
     color:white;
 }
 
+.topbar-disconnect {
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    border-radius: 999px;
+    padding: 5px 10px;
+    background: transparent;
+    color: #ffb2b2;
+    cursor: pointer;
+    font-size: 0.78rem;
+}
+
+.topbar-disconnect:hover {
+    background: rgba(255, 100, 100, 0.12);
+    color: #fff;
+}
+
 .navbar{
 
     background:#111;
