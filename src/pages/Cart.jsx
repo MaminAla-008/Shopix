@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import "./Pages.scss";
+import "../styles/pages.scss";
 import "../styles/Cart.scss";
 
 const Cart = ({ cart, account, onRemove, onCheckout, message, clearMessage }) => {

@@ -1,4 +1,4 @@
-@import "../styles/variables";
+@import "./variables";
 
 .page {
   min-height: calc(100vh - 120px);
@@ -464,7 +464,7 @@
       border-top: 1px solid rgba(255, 255, 255, 0.1);
     }
 
-.back-link {
+    .back-link {
       display: inline-block;
       margin-top: 20px;
       color: $primary;
@@ -558,79 +558,15 @@
 
       .order-items {
         list-style: none;
-        min-height: calc(100vh - 80px);
-        padding: 80px 5%;
-        background: linear-gradient(135deg, rgba($primary, 0.12), transparent 70%), $background;
-        color: $text;
+        padding: 0;
+        margin: 0;
 
-  .pages-intro {
-    text-align: center;
-    margin-bottom: 32px;
-  }
-
-  .eyebrow {
-    display: inline-block;
-    margin-bottom: 10px;
-    color: $primary;
-    font-size: 0.9rem;
-    font-weight: 700;
-    letter-spacing: 0.24em;
-    text-transform: uppercase;
-  }
-
-  h1 {
-    font-size: clamp(2rem, 3vw, 2.8rem);
-    margin-bottom: 12px;
-  }
-
-  p {
-    color: $textGray;
-    max-width: 700px;
-    margin: 0 auto;
-    line-height: 1.7;
-  }
-
-  .info-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
-    margin-top: 32px;
-  }
-
-  .info-card {
-    background: rgba(255, 255, 255, 0.04);
-    border: 1px solid $border;
-    border-radius: $radius;
-    padding: 24px;
-    transition: border-color $transition, transform $transition;
-
-    &:hover {
-      border-color: $primary;
-      transform: translateY(-6px);
-    }
-
-    h3 {
-      margin-bottom: 12px;
-      font-size: 1.2rem;
-    }
-
-    p {
-      margin: 0 0 16px;
-      color: $textGray;
-    }
-
-    a {
-      color: $primary;
-      font-weight: 600;
-    }
-  }
-}
-
-.shop {
-  background-color: #121212;
-  width: 100%;
-  min-height: 50vh;
-    }
+        li {
+          color: $textGray;
+          padding: 6px 0;
+          border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
+      }
     }
   }
 }

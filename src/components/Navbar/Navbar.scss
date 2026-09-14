@@ -9,6 +9,64 @@
     border-bottom:1px solid #222;
 }
 
+.account-status-bar {
+    background: rgba(27, 204, 112, 0.12);
+    border-bottom: 1px solid rgba(27, 204, 112, 0.4);
+    color: #eafef3;
+}
+
+.account-status-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    min-height: 42px;
+    padding: 8px 0;
+    font-size: 0.88rem;
+}
+
+.status-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 10px;
+    border-radius: 999px;
+    background: rgba(27, 204, 112, 0.18);
+    border: 1px solid rgba(27, 204, 112, 0.45);
+    color: #dfffe9;
+    font-weight: 700;
+}
+
+.status-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    background: #35d77a;
+    box-shadow: 0 0 10px rgba(53, 215, 122, 0.8);
+}
+
+.account-label {
+    flex: 1;
+    text-align: center;
+    color: #dfffe9;
+    font-weight: 600;
+}
+
+.disconnect-button {
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    background: rgba(255, 255, 255, 0.04);
+    color: white;
+    border-radius: 999px;
+    padding: 7px 12px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    transition: 0.3s ease;
+}
+
+.disconnect-button:hover {
+    background: rgba(255, 255, 255, 0.08);
+}
+
 .topbar .container{
 
     display:flex;

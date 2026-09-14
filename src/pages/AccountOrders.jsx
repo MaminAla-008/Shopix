@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { fetchOrders } from "../services/api";
-import "./Pages.scss";
+import "../styles/pages.scss";
 import "../styles/AccountOrders.scss";
 
 const AccountOrders = ({ account }) => {

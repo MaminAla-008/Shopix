@@ -1,5 +1,5 @@
-import "./Pages.scss";
-import "../styles/info.scss"; 
+import "../styles/pages.scss";
+import "../styles/info.scss";
 
 
 const infoCards = [

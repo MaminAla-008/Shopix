@@ -10,7 +10,9 @@ import {
 
 import { Link } from "react-router-dom";
 
-const Navbar = ({ cartCount, account, onOpenAccount }) => {
+const Navbar = ({ cartCount, account, onOpenAccount, onDisconnect }) => {
+  const accountLabel = account?.phone || account?.email || account?.username || "Compte";
+
   return (
     <>
       <div className="topbar">
@@ -25,6 +27,21 @@ const Navbar = ({ cartCount, account, onOpenAccount }) => {
           </div>
         </div>
       </div>
+
+      {account && (
+        <div className="account-status-bar">
+          <div className="container account-status-inner">
+            <span className="status-pill">
+              <span className="status-dot" aria-hidden="true" />
+              Connecté
+            </span>
+            <span className="account-label">Compte : {accountLabel}</span>
+            <button type="button" className="disconnect-button" onClick={onDisconnect}>
+              Déconnexion
+            </button>
+          </div>
+        </div>
+      )}
 
       <nav className="navbar">
         <div className="container nav-content">

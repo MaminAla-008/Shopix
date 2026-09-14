@@ -1,6 +1,6 @@
 import Hero from "../components/Hero/Hero";
 import ProductCard from "../components/ProductCard/ProductCard";
-import "./Pages.scss";
+import "../styles/pages.scss";
 import "../styles/new.scss";
 
 

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import { saveOrder } from "./services/api";
 
@@ -17,124 +17,295 @@ import AccountOrders from "./pages/AccountOrders";
 
 function App() {
   const navigate = useNavigate();
-  const getStoredAccount = () => {
-    if (typeof window === "undefined") return null;
 
-    const saved = window.localStorage.getItem("shopio-account");
-    if (saved) {
-      try {
-        return JSON.parse(saved);
-      } catch {
-        return null;
-      }
+  // ==========================================
+  // RÉCUPÉRER LE COMPTE CONNECTÉ
+  // ==========================================
+
+  const getStoredAccount = () => {
+    if (typeof window === "undefined") {
+      return null;
     }
 
-    return null;
+    const saved = window.localStorage.getItem("shopio-account");
+
+    if (!saved) {
+      return null;
+    }
+
+    try {
+      return JSON.parse(saved);
+    } catch {
+      return null;
+    }
   };
 
   const [account, setAccount] = useState(() => getStoredAccount());
 
+  // ==========================================
+  // PANIER
+  // Le panier reste local au navigateur
+  // ==========================================
+
   const [cart, setCart] = useState(() => {
-    if (typeof window === "undefined") return [];
+    if (typeof window === "undefined") {
+      return [];
+    }
 
     const saved = window.localStorage.getItem("shopio-cart");
-    return saved ? JSON.parse(saved) : [];
+
+    if (!saved) {
+      return [];
+    }
+
+    try {
+      return JSON.parse(saved);
+    } catch {
+      return [];
+    }
   });
 
-  const [isAccountModalOpen, setIsAccountModalOpen] = useState(false);
-  const [successMessage, setSuccessMessage] = useState("");
-  const [pendingAction, setPendingAction] = useState(null);
+  // ==========================================
+  // ÉTATS
+  // ==========================================
 
-  const persistAccount = (nextAccount) => {
-    const storedUsers = JSON.parse(window.localStorage.getItem("shopio-users") || "[]");
-    const exists = storedUsers.some((user) => user.phone === nextAccount.phone);
+  const [isAccountModalOpen, setIsAccountModalOpen] =
+    useState(false);
 
-    if (!exists) {
-      storedUsers.push({ ...nextAccount, createdAt: Date.now() });
-      window.localStorage.setItem("shopio-users", JSON.stringify(storedUsers));
-    }
+  const [successMessage, setSuccessMessage] =
+    useState("");
+
+  const [pendingAction, setPendingAction] =
+    useState(null);
+
+  const handleDisconnect = () => {
+    setAccount(null);
+    window.localStorage.removeItem("shopio-account");
+    setSuccessMessage("Compte déconnecté.");
   };
 
-  useEffect(() => {
-    window.localStorage.setItem("shopio-cart", JSON.stringify(cart));
-  }, [cart]);
+  // ==========================================
+  // SAUVEGARDER LE COMPTE ACTUEL
+  // ==========================================
+
+  const persistAccount = (nextAccount) => {
+    if (!nextAccount) {
+      return;
+    }
+
+    window.localStorage.setItem(
+      "shopio-account",
+      JSON.stringify(nextAccount)
+    );
+  };
+
+  // ==========================================
+  // OUVRIR LE MODAL DE COMPTE
+  // ==========================================
 
   const openAccountModal = (action = null) => {
-    setPendingAction(action);
+    setPendingAction(() => action);
     setIsAccountModalOpen(true);
   };
 
+  // ==========================================
+  // CONNEXION / INSCRIPTION RÉUSSIE
+  // ==========================================
+
   const handleAccountSuccess = (nextAccount) => {
+    if (!nextAccount) {
+      return;
+    }
+
+    // On conserve uniquement le compte actuellement
+    // connecté dans le navigateur.
     persistAccount(nextAccount);
+
     setAccount(nextAccount);
+
     setIsAccountModalOpen(false);
-    setSuccessMessage("Compte prêt. Vous pouvez continuer votre achat.");
+
+    setSuccessMessage(
+      "Compte connecté. Vous pouvez continuer votre achat."
+    );
 
     if (pendingAction) {
       const action = pendingAction;
+
       setPendingAction(null);
+
       action(nextAccount);
     }
   };
 
-  const addToCart = (product, currentAccount = account) => {
-    const activeAccount = currentAccount || getStoredAccount();
+  // ==========================================
+  // AJOUTER UN PRODUIT AU PANIER
+  // ==========================================
+
+  const addToCart = (
+    product,
+    currentAccount = account
+  ) => {
+    const activeAccount =
+      currentAccount || getStoredAccount();
 
     if (!activeAccount) {
-      openAccountModal((createdAccount) => addToCart(product, createdAccount));
+      openAccountModal((createdAccount) => {
+        addToCart(product, createdAccount);
+      });
+
       return;
     }
 
     setAccount(activeAccount);
+
+    persistAccount(activeAccount);
+
     setCart((prev) => {
-      const nextCart = [...prev, { ...product, addedAt: Date.now() }];
-      window.localStorage.setItem("shopio-cart", JSON.stringify(nextCart));
+      const nextCart = [
+        ...prev,
+        {
+          ...product,
+          addedAt: Date.now(),
+        },
+      ];
+
+      window.localStorage.setItem(
+        "shopio-cart",
+        JSON.stringify(nextCart)
+      );
+
       return nextCart;
     });
-    setSuccessMessage(`${product.name} a été ajouté à votre panier.`);
+
+    setSuccessMessage(
+      `${product.name} a été ajouté à votre panier.`
+    );
   };
 
-  const buyNow = (product, currentAccount = account) => {
-    const activeAccount = currentAccount || getStoredAccount();
+  // ==========================================
+  // ACHETER MAINTENANT
+  // ==========================================
+
+  const buyNow = (
+    product,
+    currentAccount = account
+  ) => {
+    const activeAccount =
+      currentAccount || getStoredAccount();
 
     if (!activeAccount) {
-      openAccountModal((createdAccount) => buyNow(product, createdAccount));
+      openAccountModal((createdAccount) => {
+        buyNow(product, createdAccount);
+      });
+
       return;
     }
 
     setAccount(activeAccount);
+
+    persistAccount(activeAccount);
+
     setCart((prev) => {
-      const nextCart = [...prev, { ...product, addedAt: Date.now() }];
-      window.localStorage.setItem("shopio-cart", JSON.stringify(nextCart));
+      const nextCart = [
+        ...prev,
+        {
+          ...product,
+          addedAt: Date.now(),
+        },
+      ];
+
+      window.localStorage.setItem(
+        "shopio-cart",
+        JSON.stringify(nextCart)
+      );
+
       return nextCart;
     });
-    setSuccessMessage(`${product.name} a été ajouté au panier. Vous pouvez finaliser votre commande.`);
+
+    setSuccessMessage(
+      `${product.name} a été ajouté au panier. Vous pouvez finaliser votre commande.`
+    );
   };
+
+  // ==========================================
+  // SUPPRIMER DU PANIER
+  // ==========================================
 
   const removeFromCart = (productId) => {
-    setCart((prev) => prev.filter((item) => item.id !== productId));
+    setCart((prev) => {
+      const nextCart = prev.filter(
+        (item) => item.id !== productId
+      );
+
+      window.localStorage.setItem(
+        "shopio-cart",
+        JSON.stringify(nextCart)
+      );
+
+      return nextCart;
+    });
   };
 
+  // ==========================================
+  // FINALISER LA COMMANDE
+  // ==========================================
+
   const checkout = async () => {
-    const activeAccount = account || getStoredAccount();
+    const activeAccount =
+      account || getStoredAccount();
+
+    // ------------------------------------------
+    // Vérification du compte
+    // ------------------------------------------
 
     if (!activeAccount) {
       openAccountModal();
       return;
     }
 
+    // ------------------------------------------
+    // Vérification du panier
+    // ------------------------------------------
+
     if (cart.length === 0) {
-      setSuccessMessage("Votre panier est vide. Ajoutez un produit avant de commander.");
+      setSuccessMessage(
+        "Votre panier est vide. Ajoutez un produit avant de commander."
+      );
+
       return;
     }
 
     setAccount(activeAccount);
 
-    const reference = Date.now().toString().slice(-6);
+    persistAccount(activeAccount);
+
+    // ------------------------------------------
+    // Référence de commande
+    // ------------------------------------------
+
+    const reference = Date.now()
+      .toString()
+      .slice(-6);
+
+    // ------------------------------------------
+    // Calcul du total
+    // ------------------------------------------
+
     const total = cart.reduce((sum, item) => {
-      const value = Number(String(item.price).replace(/[^\d.]/g, ""));
-      return sum + (Number.isFinite(value) ? value : 0);
+      const value = Number(
+        String(item.price).replace(/[^\d.]/g, "")
+      );
+
+      return (
+        sum +
+        (Number.isFinite(value) ? value : 0)
+      );
     }, 0);
+
+    // ------------------------------------------
+    // Données de commande
+    // ------------------------------------------
 
     const purchase = {
       client: activeAccount.phone,
@@ -143,33 +314,69 @@ function App() {
       items: cart.map((item) => item.name),
     };
 
+    // ------------------------------------------
+    // ENVOI AU BACKEND / SQLITE
+    // ------------------------------------------
+
     try {
       await saveOrder(purchase);
+
+      console.log(
+        "Commande enregistrée avec succès :",
+        purchase
+      );
+
+      setSuccessMessage(
+        `Commande confirmée ! Référence ${reference}.`
+      );
+
+      // Vider le panier seulement si SQLite
+      // a accepté la commande.
+      setCart([]);
+
+      window.localStorage.setItem(
+        "shopio-cart",
+        JSON.stringify([])
+      );
+
+      navigate("/thank-you");
     } catch (error) {
-      console.error("Erreur d'enregistrement de commande", error);
+      console.error(
+        "Erreur d'enregistrement de commande :",
+        error
+      );
+
+      setSuccessMessage(
+        "Impossible d'enregistrer la commande sur le serveur. Vérifiez que le backend est disponible."
+      );
+
+      // IMPORTANT :
+      // On ne vide PAS le panier si la commande
+      // n'a pas été enregistrée.
     }
-
-    const storedPurchases = JSON.parse(window.localStorage.getItem("shopio-purchases") || "[]");
-    storedPurchases.push({
-      id: reference,
-      phone: activeAccount.phone,
-      reference,
-      total,
-      items: purchase.items,
-      purchasedAt: Date.now(),
-    });
-
-    window.localStorage.setItem("shopio-purchases", JSON.stringify(storedPurchases));
-    setSuccessMessage(`Commande confirmée ! Référence ${reference}. Un SMS de confirmation vous a été envoyé.`);
-    setCart([]);
-    navigate("/thank-you");
   };
+
+  // ==========================================
+  // AFFICHAGE
+  // ==========================================
 
   return (
     <>
-      <Navbar cartCount={cart.length} account={account} onOpenAccount={() => openAccountModal()} />
+      <Navbar
+        cartCount={cart.length}
+        account={account}
+        onOpenAccount={() =>
+          openAccountModal()
+        }
+        onDisconnect={handleDisconnect}
+      />
 
       <Routes>
+
+        {/* ======================================
+            ACCUEIL
+        ====================================== */}
+
         <Route
           path="/"
           element={
@@ -177,10 +384,16 @@ function App() {
               onAddToCart={addToCart}
               onBuyNow={buyNow}
               message={successMessage}
-              clearMessage={() => setSuccessMessage("")}
+              clearMessage={() =>
+                setSuccessMessage("")
+              }
             />
           }
         />
+
+        {/* ======================================
+            BOUTIQUE
+        ====================================== */}
 
         <Route
           path="/shop"
@@ -189,20 +402,75 @@ function App() {
               onAddToCart={addToCart}
               onBuyNow={buyNow}
               message={successMessage}
-              clearMessage={() => setSuccessMessage("")}
+              clearMessage={() =>
+                setSuccessMessage("")
+              }
             />
           }
         />
 
-        <Route path="/categories" element={<Categories />} />
-        <Route path="/deals" element={<Deals />} />
-        <Route path="/pages" element={<Pages />} />
-        <Route path="/admin" element={<Admin />} />
+        {/* ======================================
+            CATÉGORIES
+        ====================================== */}
+
+        <Route
+          path="/categories"
+          element={<Categories />}
+        />
+
+        {/* ======================================
+            PROMOTIONS
+        ====================================== */}
+
+        <Route
+          path="/deals"
+          element={<Deals />}
+        />
+
+        {/* ======================================
+            PAGES
+        ====================================== */}
+
+        <Route
+          path="/pages"
+          element={<Pages />}
+        />
+
+        {/* ======================================
+            ADMIN
+        ====================================== */}
+
+        <Route
+          path="/admin"
+          element={<Admin />}
+        />
+
+        {/* ======================================
+            MES COMMANDES
+        ====================================== */}
+
         <Route
           path="/account/orders"
-          element={<AccountOrders account={account} />}
+          element={
+            <AccountOrders
+              account={account}
+            />
+          }
         />
-        <Route path="/thank-you" element={<ThankYou />} />
+
+        {/* ======================================
+            CONFIRMATION
+        ====================================== */}
+
+        <Route
+          path="/thank-you"
+          element={<ThankYou />}
+        />
+
+        {/* ======================================
+            PANIER
+        ====================================== */}
+
         <Route
           path="/cart"
           element={
@@ -212,11 +480,18 @@ function App() {
               onRemove={removeFromCart}
               onCheckout={checkout}
               message={successMessage}
-              clearMessage={() => setSuccessMessage("")}
+              clearMessage={() =>
+                setSuccessMessage("")
+              }
             />
           }
         />
+
       </Routes>
+
+      {/* ========================================
+          MODAL COMPTE
+      ======================================== */}
 
       <AccountModal
         isOpen={isAccountModalOpen}

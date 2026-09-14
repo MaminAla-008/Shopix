@@ -12,8 +12,15 @@
    HERO
 ========================================= */
 
-
-
+.shop-page .hero {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: 36px;
+  max-width: 1250px;
+  margin: 0 auto;
+  padding: 90px 7% 40px;
+}
 
 .hero-content {
   max-width: 650px;

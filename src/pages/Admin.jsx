@@ -1,8 +1,8 @@
 import { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import { adminLogin, fetchOrders, fetchUsers } from "../services/api";
-import "./Pages.scss";
-import "../styles/Admin.scss"
+import "../styles/pages.scss";
+import "../styles/Admin.scss";
 
 const ADMIN_CREDENTIALS = {
   phone: "admin",

@@ -1,6 +1,6 @@
 import Hero from "../components/Hero/Hero";
 import ProductCard from "../components/ProductCard/ProductCard";
-import "./Pages.scss";
+import "../styles/pages.scss";
 import "../styles/Home.scss";
 
 const Home = ({
@@ -58,7 +58,7 @@ const Home = ({
     {
       id: 6,
       name: "Tecno Spark 20",
-      price: "",
+      price: "129$",
       description:
         'Double SIM, 256 Go, batterie longue durée, écran 6,6".',
       image:
