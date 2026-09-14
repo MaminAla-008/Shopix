@@ -22,8 +22,13 @@
   padding: 90px 7% 40px;
 }
 
-.hero-content {
+.shop-page .hero-content {
+  position: relative;
+  z-index: 3;
   max-width: 650px;
+  width: auto;
+  opacity: 1;
+  visibility: visible;
 }
 
 
@@ -50,7 +55,7 @@
 }
 
 
-.hero h1 {
+.shop-page .hero h1 {
   margin: 0 0 22px;
 
   font-size: clamp(3rem, 5vw, 5rem);
@@ -76,7 +81,7 @@
 }
 
 
-.hero p {
+.shop-page .hero p {
   max-width: 600px;
 
   color: $textGray;
@@ -87,7 +92,7 @@
 }
 
 
-.hero-actions {
+.shop-page .hero-actions {
   display: flex;
 
   gap: 14px;
@@ -165,7 +170,7 @@
 }
 
 
-.hero-features {
+.shop-page .hero-features {
   display: flex;
 
   gap: 25px;
