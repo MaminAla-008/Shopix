@@ -39,12 +39,12 @@ const Home = ({
     },
     {
       id: 4,
-      name: "Chargeur rapide 65W",
-      price: "29$",
+      name: "Xiaomi Redmi Note 13",
+      price: "249$",
       description:
-        "Chargeur USB-C 65 W compatible smartphone, tablette et PC.",
+        "Écran 120 Hz, 8 Go RAM, charge rapide 33 W, caméra 108 MP.",
       image:
-        "https://images.unsplash.com/photo-1583863788434-e58a36330b94",
+        "https://images.unsplash.com/photo-1580910051074-3eb694886505",
     },
     {
       id: 5,
@@ -57,12 +57,12 @@ const Home = ({
     },
     {
       id: 6,
-      name: "Tecno Spark 20",
-      price: "129$",
+      name: "Sony WH-1000XM5",
+      price: "349$",
       description:
-        'Double SIM, 256 Go, batterie longue durée, écran 6,6".',
+        "Casque Bluetooth avec réduction de bruit et son haute résolution.",
       image:
-        "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9",
+        "https://images.unsplash.com/photo-1599669454699-248893623440",
     },
   ];
 

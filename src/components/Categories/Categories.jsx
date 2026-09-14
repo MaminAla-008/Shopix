@@ -22,7 +22,7 @@ const data = [
   {
     id: 3,
     icon: <FaTag />,
-    title: "Accessoires sans marque",
+    title: "Écouteurs sans fil",
     items: "33 produits",
   },
 ];

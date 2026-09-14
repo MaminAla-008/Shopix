@@ -13,8 +13,8 @@ const categories = [
   },
   {
     id: 3,
-    name: "Accessoires sans marque",
-    image: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=900&q=80",
+    name: "Écouteurs sans fil",
+    image: "https://images.unsplash.com/photo-1606220945770-b5b6c2c55bf1?auto=format&fit=crop&w=900&q=80",
   },
 ];
 

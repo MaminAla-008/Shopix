@@ -13,12 +13,12 @@ const Home = ({
   const products = [
     {
       id: 1,
-      name: "Ordinateur portable gaming",
-      price: "999$",
+      name: "Samsung Galaxy S24",
+      price: "799$",
       description:
-        "Puissance et confort pour les jeux, le travail et le streaming.",
+        "Écran AMOLED, appareil photo premium et batterie longue durée.",
       image:
-        "https://images.unsplash.com/photo-1496181133206-80ce9b88a853",
+        "https://images.unsplash.com/photo-1610945265064-0e34e5519bbf",
     },
     {
       id: 2,
@@ -31,12 +31,12 @@ const Home = ({
     },
     {
       id: 3,
-      name: "Casque sans fil",
-      price: "120$",
+      name: "Sony WH-1000XM5",
+      price: "349$",
       description:
-        "Son immersif, confort au quotidien et réduction de bruit.",
+        "Casque Bluetooth avec réduction de bruit et son haute résolution.",
       image:
-        "https://images.unsplash.com/photo-1505740420928-5e560c06d30e",
+        "https://images.unsplash.com/photo-1599669454699-248893623440",
     },
   ];
 

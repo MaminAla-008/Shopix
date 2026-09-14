@@ -62,12 +62,12 @@ const products = [
   },
   {
     id: 6,
-    name: "Chargeur rapide 65W",
-    price: "$29",
+    name: "Sony WF-1000XM5",
+    price: "$279",
     description:
-      "Chargeur USB-C 65 W compatible smartphone, tablette et PC.",
+      "Écouteurs Bluetooth avec réduction de bruit et étui de charge.",
     image:
-      "https://images.unsplash.com/photo-1583863788434-e58a36330b94",
+      "https://images.unsplash.com/photo-1606220945770-b5b6c2c55bf1",
     rating: 4,
   },
   {
@@ -92,12 +92,12 @@ const products = [
   },
   {
     id: 9,
-    name: "Chargeur de voyage 20W",
-    price: "$19",
+    name: "Apple AirPods Pro",
+    price: "$249",
     description:
-      "Chargeur compact USB-C 20 W, sécurité et charge rapide.",
+      "Écouteurs sans fil avec audio spatial et réduction de bruit active.",
     image:
-      "https://images.unsplash.com/photo-1553867745-2ec4c80b0b76",
+      "https://images.unsplash.com/photo-1606220945770-b5b6c2c55bf1",
     rating: 4,
   },
 ];
@@ -114,9 +114,9 @@ const categories = [
       "https://images.unsplash.com/photo-1546435770-a3e426bf472b",
   },
   {
-    name: "Accessoires sans marque",
+    name: "Écouteurs sans fil",
     image:
-      "https://images.unsplash.com/photo-1523275335684-37898b6baf30",
+      "https://images.unsplash.com/photo-1606220945770-b5b6c2c55bf1",
   },
 ];
 

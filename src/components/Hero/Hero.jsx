@@ -24,8 +24,8 @@ const Hero = () => {
       <div className="hero-image">
         <div className="image-card">
           <img
-            src="https://images.unsplash.com/photo-1523275335684-37898b6baf30"
-            alt="product"
+            src="https://images.unsplash.com/photo-1592750475338-74b7b21085ab"
+            alt="iPhone 15"
           />
         </div>
       </div>
