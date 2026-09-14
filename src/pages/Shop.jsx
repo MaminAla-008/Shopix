@@ -178,6 +178,39 @@ const products = [
     rating: 5,
   },
   {
+    id: 28,
+    name: "Oppo Reno 12",
+    price: "$429",
+    description:
+      "Écran AMOLED 120 Hz, caméra portrait et charge rapide 80 W.",
+    category: "phones",
+    image:
+      "https://images.unsplash.com/photo-1556656793-08538906a9f8",
+    rating: 4,
+  },
+  {
+    id: 29,
+    name: "Realme 12 Pro",
+    price: "$349",
+    description:
+      "Smartphone 5G, écran incurvé et caméra avec zoom portrait.",
+    category: "phones",
+    image:
+      "https://images.unsplash.com/photo-1523206489230-c012c64b2b48",
+    rating: 4,
+  },
+  {
+    id: 30,
+    name: "Redmi Note 13 Pro",
+    price: "$299",
+    description:
+      "Écran AMOLED 120 Hz, caméra 200 MP et batterie longue durée.",
+    category: "phones",
+    image:
+      "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9",
+    rating: 5,
+  },
+  {
     id: 16,
     name: "Casque JBL Tune 760NC Noir",
     price: "$79",
@@ -196,7 +229,7 @@ const products = [
       "Casque circum-aural bleu, son puissant et réduction de bruit adaptative.",
     category: "headphones",
     image:
-      "https://images.unsplash.com/photo-1546435770-a3e426bf472b",
+      "https://images.unsplash.com/photo-1484704849700-f032a568e944",
     rating: 5,
   },
   {
@@ -218,7 +251,7 @@ const products = [
       "Casque léger blanc, confortable et doté d’une réduction de bruit active.",
     category: "headphones",
     image:
-      "https://images.unsplash.com/photo-1505740420928-5e560c06d30e",
+      "https://images.unsplash.com/photo-1524678606370-a47ad25cb82a",
     rating: 4,
   },
   {
@@ -229,7 +262,7 @@ const products = [
       "Casque sans fil rouge, audio immersif et mode transparence.",
     category: "headphones",
     image:
-      "https://images.unsplash.com/photo-1599669454699-248893623440",
+      "https://images.unsplash.com/photo-1487215078519-e21cc028cb29",
     rating: 5,
   },
   {
@@ -240,7 +273,7 @@ const products = [
       "Casque gaming vert avec micro, son surround et confort longue session.",
     category: "headphones",
     image:
-      "https://images.unsplash.com/photo-1546435770-a3e426bf472b",
+      "https://images.unsplash.com/photo-1516280440614-37939bbacd81",
     rating: 4,
   },
   {
@@ -262,7 +295,7 @@ const products = [
       "Écouteurs avec réduction de bruit active, audio adaptatif et USB-C.",
     category: "earbuds",
     image:
-      "https://images.unsplash.com/photo-1606220945770-b5b6c2c55bf1",
+      "https://images.unsplash.com/photo-1590658268037-6bf12165a8df",
     rating: 5,
   },
   {
@@ -273,7 +306,7 @@ const products = [
       "Écouteurs violets avec audio 360 degrés et résistance à l’eau.",
     category: "earbuds",
     image:
-      "https://images.unsplash.com/photo-1590658268037-6bf12165a8df",
+      "https://images.unsplash.com/photo-1588423771073-1edd975b7f5d",
     rating: 5,
   },
   {
@@ -284,7 +317,7 @@ const products = [
       "Écouteurs noirs avec réduction de bruit et étui de charge rapide.",
     category: "earbuds",
     image:
-      "https://images.unsplash.com/photo-1606220945770-b5b6c2c55bf1",
+      "https://images.unsplash.com/photo-1606041011872-596597976b25",
     rating: 5,
   },
   {
@@ -295,7 +328,7 @@ const products = [
       "Écouteurs bleus, basses puissantes et autonomie jusqu’à 40 heures.",
     category: "earbuds",
     image:
-      "https://images.unsplash.com/photo-1590658268037-6bf12165a8df",
+      "https://images.unsplash.com/photo-1572569511254-d8f925fe2cbb",
     rating: 4,
   },
   {
@@ -306,7 +339,7 @@ const products = [
       "Écouteurs transparents au design moderne, ANC et son détaillé.",
     category: "earbuds",
     image:
-      "https://images.unsplash.com/photo-1606220945770-b5b6c2c55bf1",
+      "https://images.unsplash.com/photo-1608156639585-b3a032ef9689",
     rating: 4,
   },
 ];
