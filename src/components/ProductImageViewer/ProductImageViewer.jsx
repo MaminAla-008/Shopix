@@ -8,7 +8,9 @@ const ProductImageViewer = ({ product, className = "" }) => {
   const isPhone = product.category === "phones";
   const frontImage = product.image;
   const backImage =
-    product.backImage || product.image.replace(/-1\.jpg$/, "-2.jpg");
+    product.backImage || product.image.replace(/-(1|2)\.jpg$/, (_, side) =>
+      side === "1" ? "-2.jpg" : "-1.jpg"
+    );
   const displayedImage = view === "back" ? backImage : frontImage;
 
   useEffect(() => {

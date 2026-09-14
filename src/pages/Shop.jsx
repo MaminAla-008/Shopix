@@ -212,6 +212,84 @@ const products = [
     rating: 5,
   },
   {
+    id: 31,
+    name: "RedMagic 9 Pro",
+    price: "$649",
+    description:
+      "Téléphone gaming avec ventilateur intégré, écran 120 Hz et grande batterie.",
+    category: "phones",
+    image:
+      "https://fdn2.gsmarena.com/vv/pics/zte/zte-nubia-red-magic-9-pro-1.jpg",
+    backImage:
+      "https://fdn2.gsmarena.com/vv/pics/zte/zte-nubia-red-magic-9-pro-1.jpg",
+    rating: 5,
+  },
+  {
+    id: 32,
+    name: "RedMagic 10 Pro",
+    price: "$799",
+    description:
+      "Gaming haute performance, écran immersif et refroidissement avancé.",
+    category: "phones",
+    image:
+      "https://fdn2.gsmarena.com/vv/pics/zte/zte-nubia-red-magic-10-pro-1.jpg",
+    backImage:
+      "https://fdn2.gsmarena.com/vv/pics/zte/zte-nubia-red-magic-10-pro-2.jpg",
+    rating: 5,
+  },
+  {
+    id: 33,
+    name: "Realme 13 Pro+",
+    price: "$429",
+    description:
+      "Écran OLED, caméra portrait et charge rapide 80 W.",
+    category: "phones",
+    image:
+      "https://fdn2.gsmarena.com/vv/pics/realme/realme-13-pro-plus-1.jpg",
+    backImage:
+      "https://fdn2.gsmarena.com/vv/pics/realme/realme-13-pro-plus-2.jpg",
+    rating: 5,
+  },
+  {
+    id: 34,
+    name: "Redmi Note 14 Pro+",
+    price: "$379",
+    description:
+      "Écran AMOLED, caméra haute résolution et batterie longue durée.",
+    category: "phones",
+    image:
+      "https://fdn2.gsmarena.com/vv/pics/xiaomi/xiaomi-redmi-note-14-pro-plus-5g-1.jpg",
+    backImage:
+      "https://fdn2.gsmarena.com/vv/pics/xiaomi/xiaomi-redmi-note-14-pro-plus-5g-2.jpg",
+    rating: 5,
+  },
+  {
+    id: 35,
+    name: "Xiaomi 14",
+    price: "$699",
+    description:
+      "Smartphone premium compact avec optiques Leica et écran AMOLED.",
+    category: "phones",
+    image:
+      "https://fdn2.gsmarena.com/vv/pics/xiaomi/xiaomi-14-1.jpg",
+    backImage:
+      "https://fdn2.gsmarena.com/vv/pics/xiaomi/xiaomi-14-2.jpg",
+    rating: 5,
+  },
+  {
+    id: 36,
+    name: "Xiaomi 14 Ultra",
+    price: "$999",
+    description:
+      "Caméra professionnelle Leica, écran LTPO et performances premium.",
+    category: "phones",
+    image:
+      "https://fdn2.gsmarena.com/vv/pics/xiaomi/xiaomi-14-ultra-1.jpg",
+    backImage:
+      "https://fdn2.gsmarena.com/vv/pics/xiaomi/xiaomi-14-ultra-2.jpg",
+    rating: 5,
+  },
+  {
     id: 16,
     name: "Casque JBL Tune 760NC Noir",
     price: "$79",
@@ -366,6 +444,39 @@ const categories = [
   },
 ];
 
+const phoneBrands = [
+  {
+    slug: "iphone",
+    name: "iPhone",
+    image: "https://fdn2.gsmarena.com/vv/pics/apple/apple-iphone-15-1.jpg",
+  },
+  {
+    slug: "samsung",
+    name: "Samsung",
+    image: "https://fdn2.gsmarena.com/vv/pics/samsung/samsung-galaxy-s23-5g-1.jpg",
+  },
+  {
+    slug: "redmagic",
+    name: "RedMagic",
+    image: "https://fdn2.gsmarena.com/vv/pics/zte/zte-nubia-red-magic-10-pro-1.jpg",
+  },
+  {
+    slug: "realme",
+    name: "Realme",
+    image: "https://fdn2.gsmarena.com/vv/pics/realme/realme-13-pro-plus-1.jpg",
+  },
+  {
+    slug: "redmi",
+    name: "Redmi",
+    image: "https://fdn2.gsmarena.com/vv/pics/xiaomi/xiaomi-redmi-note-14-pro-plus-1.jpg",
+  },
+  {
+    slug: "xiaomi",
+    name: "Xiaomi",
+    image: "https://fdn2.gsmarena.com/vv/pics/xiaomi/xiaomi-14-1.jpg",
+  },
+];
+
 export default function Shop({
   onAddToCart,
   onBuyNow,
@@ -374,6 +485,7 @@ export default function Shop({
 }) {
   const [searchParams] = useSearchParams();
   const selectedCategory = searchParams.get("category");
+  const selectedBrand = searchParams.get("brand");
   const [newsletterEmail, setNewsletterEmail] = useState("");
   const [newsletterMessage, setNewsletterMessage] = useState("");
 
@@ -391,9 +503,16 @@ export default function Shop({
   const activeCategory = categories.find(
     (category) => category.slug === selectedCategory
   );
-  const visibleProducts = activeCategory
-    ? products.filter((product) => product.category === activeCategory.slug)
-    : products;
+  const activeBrand = phoneBrands.find((brand) => brand.slug === selectedBrand);
+  const visibleProducts = activeBrand
+    ? products.filter(
+        (product) =>
+          product.category === "phones" &&
+          product.name.toLowerCase().startsWith(activeBrand.name.toLowerCase())
+      )
+    : activeCategory
+      ? products.filter((product) => product.category === activeCategory.slug)
+      : products;
 
   useEffect(() => {
     if (!activeCategory) {
@@ -406,7 +525,7 @@ export default function Shop({
         block: "start",
       });
     });
-  }, [activeCategory]);
+  }, [activeCategory, activeBrand]);
 
   return (
     <div className="shop-page">
@@ -509,6 +628,35 @@ export default function Shop({
 
       </section>
 
+      <section className="categories phone-brands">
+
+        <div className="title">
+          <span>MARQUES DE TÉLÉPHONES</span>
+          <h2>Choisir une marque</h2>
+          <p>Retrouvez tous les modèles d’une même marque.</p>
+        </div>
+
+        <div className="category-grid">
+          {phoneBrands.map((brand) => (
+            <Link
+              className="category-card"
+              key={brand.slug}
+              to={`/shop?category=phones&brand=${brand.slug}`}
+            >
+              <img src={brand.image} alt={brand.name} />
+              <div className="category-overlay">
+                <h3>{brand.name}</h3>
+                <span>
+                  Voir les modèles
+                  <FaArrowRight />
+                </span>
+              </div>
+            </Link>
+          ))}
+        </div>
+
+      </section>
+
 
       {/* =========================
           PRODUCTS
@@ -523,7 +671,7 @@ export default function Shop({
           <span>NOTRE SÉLECTION</span>
 
           <h2>
-            {activeCategory ? activeCategory.name : "Produits populaires"}
+            {activeBrand?.name || activeCategory?.name || "Produits populaires"}
           </h2>
 
           <p>
