@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import "../styles/Shop.scss";
 import {
@@ -162,6 +162,19 @@ export default function Shop({
   const visibleProducts = activeCategory
     ? products.filter((product) => product.category === activeCategory.slug)
     : products;
+
+  useEffect(() => {
+    if (!activeCategory) {
+      return;
+    }
+
+    window.requestAnimationFrame(() => {
+      document.getElementById("products")?.scrollIntoView({
+        behavior: "smooth",
+        block: "start",
+      });
+    });
+  }, [activeCategory]);
 
   return (
     <div className="shop-page">
