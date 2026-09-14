@@ -24,12 +24,6 @@ const categoryShowcase = [
   },
 ];
 
-const styleShowcase = [
-  ["Minimal", "Des lignes sobres et une interface facile à parcourir."],
-  ["Performance", "Une sélection pensée pour les usages rapides et exigeants."],
-  ["Studio", "Une atmosphère claire pour mieux comparer les univers audio."],
-];
-
 const Home = () => {
   return (
     <main className="home-page">
@@ -41,9 +35,9 @@ const Home = () => {
 
       <section className="home-showcase" aria-labelledby="home-showcase-title">
         <div className="home-section-heading">
-          <span className="eyebrow">Univers Shopix</span>
-          <h2 id="home-showcase-title">Des catégories pensées par usage</h2>
-          <p>Une démonstration visuelle de notre style et de nos univers, sans catalogue de vente sur l’accueil.</p>
+          <span className="eyebrow">Catégories principales</span>
+          <h2 id="home-showcase-title">Explorez nos univers</h2>
+          <p>Accédez rapidement aux téléphones, casques et écouteurs depuis une présentation claire et professionnelle.</p>
         </div>
 
         <div className="home-category-showcase">
@@ -56,24 +50,6 @@ const Home = () => {
                 <p>{category.text}</p>
               </div>
             </Link>
-          ))}
-        </div>
-      </section>
-
-      <section className="home-style-showcase" aria-labelledby="home-style-title">
-        <div className="home-section-heading">
-          <span className="eyebrow">Direction artistique</span>
-          <h2 id="home-style-title">Un style clair, moderne et technologique</h2>
-        </div>
-        <div className="home-style-list">
-          {styleShowcase.map(([title, text], index) => (
-            <article className="home-style-item" key={title}>
-              <span>0{index + 1}</span>
-              <div>
-                <h3>{title}</h3>
-                <p>{text}</p>
-              </div>
-            </article>
           ))}
         </div>
       </section>

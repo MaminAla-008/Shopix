@@ -528,52 +528,12 @@
   line-height: 1.5;
 }
 
-.home-style-showcase {
-  display: grid;
-  grid-template-columns: minmax(260px, 0.8fr) 1.2fr;
-  gap: 56px;
-  border-top: 1px solid $border;
-}
-
-.home-style-list {
-  display: grid;
-  gap: 0;
-}
-
-.home-style-item {
-  display: grid;
-  grid-template-columns: 52px 1fr;
-  gap: 18px;
-  padding: 20px 0;
-  border-bottom: 1px solid $border;
-}
-
-.home-style-item > span {
-  color: $primary;
-  font-size: 0.85rem;
-  font-weight: 800;
-}
-
-.home-style-item h3 {
-  margin: 0 0 6px;
-  color: $text;
-  font-size: 1.2rem;
-}
-
-.home-style-item p {
-  margin: 0;
-  color: $textGray;
-  line-height: 1.6;
-}
-
 @media (max-width: 800px) {
-  .home-category-showcase,
-  .home-style-showcase {
+  .home-category-showcase {
     grid-template-columns: 1fr;
   }
 
-  .home-showcase,
-  .home-style-showcase {
+  .home-showcase {
     padding: 56px 20px;
   }
 }
