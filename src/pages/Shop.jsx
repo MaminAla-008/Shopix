@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import "../styles/Shop.scss";
+import ProductImageViewer from "../components/ProductImageViewer/ProductImageViewer";
 import {
   FaStar,
   FaShoppingCart,
@@ -542,11 +543,7 @@ export default function Shop({
             >
 
               <div className="image">
-
-                <img
-                  src={item.image}
-                  alt={item.name}
-                />
+                <ProductImageViewer product={item} />
 
                 <span className="product-badge">
                   Populaire

@@ -1,9 +1,10 @@
 import "./ProductCard.scss";
+import ProductImageViewer from "../ProductImageViewer/ProductImageViewer";
 
 const ProductCard = ({ product, onAddToCart, onBuyNow }) => {
   return (
     <div className="product-card">
-      <img src={product.image} alt={product.name} />
+      <ProductImageViewer product={product} />
 
       <h3>{product.name}</h3>
       <p className="product-description">{product.description}</p>
