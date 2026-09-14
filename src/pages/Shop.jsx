@@ -14,98 +14,296 @@ import {
 const products = [
   {
     id: 1,
-    name: "Samsung Galaxy A15",
-    price: "$199",
+    name: "iPhone 10",
+    price: "$399",
     description:
-      'Écran 6,5" AMOLED, 128 Go, batterie 5000 mAh, triple caméra.',
-    category: "phones",
-    image:
-      "https://images.unsplash.com/photo-1610945265064-0e34e5519bbf",
-    rating: 5,
-  },
-  {
-    id: 2,
-    name: "iPhone 15",
-    price: "$899",
-    description:
-      "Puce A16 Bionic, appareil photo 48 MP, Dynamic Island.",
+      "Design compact, écran Retina et appareil photo double objectif.",
     category: "phones",
     image:
       "https://images.unsplash.com/photo-1592750475338-74b7b21085ab",
-    rating: 5,
+    rating: 4,
   },
   {
-    id: 3,
-    name: "Tecno Spark 20",
-    price: "$129",
+    id: 2,
+    name: "iPhone 11",
+    price: "$449",
     description:
-      'Double SIM, 256 Go, batterie longue durée, écran 6,6".',
+      "Puce A13 Bionic, double appareil photo et finition colorée.",
     category: "phones",
     image:
       "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9",
     rating: 4,
   },
   {
-    id: 4,
-    name: "Xiaomi Redmi Note 13",
-    price: "$249",
+    id: 3,
+    name: "iPhone 12",
+    price: "$549",
     description:
-      "Écran 120 Hz, 8 Go RAM, charge rapide 33 W, caméra 108 MP.",
+      "Écran OLED, 5G et design à bords plats.",
+    category: "phones",
+    image:
+      "https://images.unsplash.com/photo-1610945265064-0e34e5519bbf",
+    rating: 5,
+  },
+  {
+    id: 4,
+    name: "iPhone 13",
+    price: "$649",
+    description:
+      "Autonomie améliorée, caméra avancée et écran Super Retina.",
+    category: "phones",
+    image:
+      "https://images.unsplash.com/photo-1592750475338-74b7b21085ab",
+    rating: 5,
+  },
+  {
+    id: 5,
+    name: "iPhone 14",
+    price: "$749",
+    description:
+      "Détection des accidents, caméra 12 MP et puce performante.",
+    category: "phones",
+    image:
+      "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9",
+    rating: 5,
+  },
+  {
+    id: 6,
+    name: "iPhone 15",
+    price: "$899",
+    description:
+      "Puce A16 Bionic, appareil photo 48 MP et port USB-C.",
+    category: "phones",
+    image:
+      "https://images.unsplash.com/photo-1592750475338-74b7b21085ab",
+    rating: 5,
+  },
+  {
+    id: 7,
+    name: "iPhone 16",
+    price: "$999",
+    description:
+      "Écran lumineux, caméra Fusion et performances nouvelle génération.",
+    category: "phones",
+    image:
+      "https://images.unsplash.com/photo-1610945265064-0e34e5519bbf",
+    rating: 5,
+  },
+  {
+    id: 8,
+    name: "iPhone 17",
+    price: "$1,099",
+    description:
+      "Smartphone premium avec grande autonomie et caméra professionnelle.",
+    category: "phones",
+    image:
+      "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9",
+    rating: 5,
+  },
+  {
+    id: 9,
+    name: "iPhone 18",
+    price: "$1,199",
+    description:
+      "Modèle premium, écran immersif et performances ultra rapides.",
+    category: "phones",
+    image:
+      "https://images.unsplash.com/photo-1592750475338-74b7b21085ab",
+    rating: 5,
+  },
+  {
+    id: 10,
+    name: "Samsung Galaxy A15",
+    price: "$199",
+    description:
+      'Écran 6,5 pouces AMOLED, 128 Go et batterie 5000 mAh.',
+    category: "phones",
+    image:
+      "https://images.unsplash.com/photo-1610945265064-0e34e5519bbf",
+    rating: 5,
+  },
+  {
+    id: 11,
+    name: "Samsung Galaxy A35",
+    price: "$329",
+    description:
+      "Écran AMOLED 120 Hz, appareil photo polyvalent et 5G.",
+    category: "phones",
+    image:
+      "https://images.unsplash.com/photo-1580910051074-3eb694886505",
+    rating: 4,
+  },
+  {
+    id: 12,
+    name: "Samsung Galaxy A55",
+    price: "$449",
+    description:
+      "Design métal, grande autonomie et caméra haute résolution.",
+    category: "phones",
+    image:
+      "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9",
+    rating: 5,
+  },
+  {
+    id: 13,
+    name: "Samsung Galaxy S23",
+    price: "$699",
+    description:
+      "Compact, rapide et équipé d’un appareil photo professionnel.",
+    category: "phones",
+    image:
+      "https://images.unsplash.com/photo-1592750475338-74b7b21085ab",
+    rating: 5,
+  },
+  {
+    id: 14,
+    name: "Samsung Galaxy S24",
+    price: "$799",
+    description:
+      "Galaxy AI, écran Dynamic AMOLED et performances premium.",
+    category: "phones",
+    image:
+      "https://images.unsplash.com/photo-1610945265064-0e34e5519bbf",
+    rating: 5,
+  },
+  {
+    id: 15,
+    name: "Samsung Galaxy S25 Ultra",
+    price: "$1,199",
+    description:
+      "Grand écran, stylet intégré et zoom photo professionnel.",
     category: "phones",
     image:
       "https://images.unsplash.com/photo-1580910051074-3eb694886505",
     rating: 5,
   },
   {
-    id: 5,
-    name: "Casque Bluetooth JBL",
+    id: 16,
+    name: "Casque JBL Tune 760NC Noir",
     price: "$79",
     description:
-      "Son puissant, réduction de bruit, autonomie 30 heures.",
+      "Casque Bluetooth noir avec réduction de bruit et 35 heures d’autonomie.",
     category: "headphones",
     image:
       "https://images.unsplash.com/photo-1505740420928-5e560c06d30e",
     rating: 5,
   },
   {
-    id: 6,
-    name: "Sony WF-1000XM5",
-    price: "$279",
+    id: 17,
+    name: "Casque JBL Live 660NC Bleu",
+    price: "$129",
     description:
-      "Écouteurs Bluetooth avec réduction de bruit et étui de charge.",
-    category: "earbuds",
+      "Casque circum-aural bleu, son puissant et réduction de bruit adaptative.",
+    category: "headphones",
     image:
-      "https://images.unsplash.com/photo-1606220945770-b5b6c2c55bf1",
+      "https://images.unsplash.com/photo-1546435770-a3e426bf472b",
+    rating: 5,
+  },
+  {
+    id: 18,
+    name: "Sony WH-1000XM5 Argent",
+    price: "$349",
+    description:
+      "Casque premium argent avec réduction de bruit et son haute résolution.",
+    category: "headphones",
+    image:
+      "https://images.unsplash.com/photo-1599669454699-248893623440",
+    rating: 5,
+  },
+  {
+    id: 19,
+    name: "Sony WH-CH720N Blanc",
+    price: "$149",
+    description:
+      "Casque léger blanc, confortable et doté d’une réduction de bruit active.",
+    category: "headphones",
+    image:
+      "https://images.unsplash.com/photo-1505740420928-5e560c06d30e",
     rating: 4,
   },
   {
-    id: 7,
-    name: "Écouteurs sans fil AirPods",
+    id: 20,
+    name: "Beats Studio Pro Rouge",
+    price: "$249",
+    description:
+      "Casque sans fil rouge, audio immersif et mode transparence.",
+    category: "headphones",
+    image:
+      "https://images.unsplash.com/photo-1599669454699-248893623440",
+    rating: 5,
+  },
+  {
+    id: 21,
+    name: "Razer Barracuda Gaming Vert",
+    price: "$159",
+    description:
+      "Casque gaming vert avec micro, son surround et confort longue session.",
+    category: "headphones",
+    image:
+      "https://images.unsplash.com/photo-1546435770-a3e426bf472b",
+    rating: 4,
+  },
+  {
+    id: 22,
+    name: "Apple AirPods 3 Blanc",
     price: "$149",
     description:
-      "Audio spatial, étui de charge, connectivité instantanée.",
+      "Écouteurs sans fil blancs avec audio spatial et boîtier de charge.",
     category: "earbuds",
     image:
       "https://images.unsplash.com/photo-1606220945770-b5b6c2c55bf1",
     rating: 5,
   },
   {
-    id: 8,
-    name: "Casque gaming avec micro",
-    price: "$59",
+    id: 23,
+    name: "Apple AirPods Pro 2 Blanc",
+    price: "$249",
     description:
-      "Son surround 7.1, micro antibruit, confort longue session.",
-    category: "headphones",
+      "Écouteurs avec réduction de bruit active, audio adaptatif et USB-C.",
+    category: "earbuds",
     image:
-      "https://images.unsplash.com/photo-1599669454699-248893623440",
+      "https://images.unsplash.com/photo-1606220945770-b5b6c2c55bf1",
+    rating: 5,
+  },
+  {
+    id: 24,
+    name: "Samsung Galaxy Buds2 Pro Violet",
+    price: "$179",
+    description:
+      "Écouteurs violets avec audio 360 degrés et résistance à l’eau.",
+    category: "earbuds",
+    image:
+      "https://images.unsplash.com/photo-1590658268037-6bf12165a8df",
+    rating: 5,
+  },
+  {
+    id: 25,
+    name: "Sony WF-1000XM5 Noir",
+    price: "$279",
+    description:
+      "Écouteurs noirs avec réduction de bruit et étui de charge rapide.",
+    category: "earbuds",
+    image:
+      "https://images.unsplash.com/photo-1606220945770-b5b6c2c55bf1",
+    rating: 5,
+  },
+  {
+    id: 26,
+    name: "JBL Live Pro 2 Bleu",
+    price: "$129",
+    description:
+      "Écouteurs bleus, basses puissantes et autonomie jusqu’à 40 heures.",
+    category: "earbuds",
+    image:
+      "https://images.unsplash.com/photo-1590658268037-6bf12165a8df",
     rating: 4,
   },
   {
-    id: 9,
-    name: "Apple AirPods Pro",
-    price: "$249",
+    id: 27,
+    name: "Nothing Ear Transparent",
+    price: "$149",
     description:
-      "Écouteurs sans fil avec audio spatial et réduction de bruit active.",
+      "Écouteurs transparents au design moderne, ANC et son détaillé.",
     category: "earbuds",
     image:
       "https://images.unsplash.com/photo-1606220945770-b5b6c2c55bf1",
