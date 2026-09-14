@@ -440,3 +440,140 @@
     font-size: 2.4rem;
   }
 }
+
+.home-showcase,
+.home-style-showcase {
+  max-width: 1250px;
+  margin: 0 auto;
+  padding: 76px 5%;
+}
+
+.home-section-heading {
+  max-width: 720px;
+  margin-bottom: 30px;
+}
+
+.home-section-heading h2 {
+  margin: 0 0 12px;
+  color: $text;
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
+  line-height: 1.12;
+}
+
+.home-section-heading p {
+  margin: 0;
+  color: $textGray;
+  line-height: 1.7;
+}
+
+.home-category-showcase {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.home-category-tile {
+  position: relative;
+  min-height: 340px;
+  overflow: hidden;
+  border: 1px solid $border;
+  border-radius: 18px;
+  color: $text;
+  text-decoration: none;
+  background: $card;
+}
+
+.home-category-tile::after {
+  content: "";
+  position: absolute;
+  inset: 35% 0 0;
+  background: linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.88));
+}
+
+.home-category-tile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.45s ease;
+}
+
+.home-category-tile:hover img {
+  transform: scale(1.06);
+}
+
+.home-category-tile-content {
+  position: absolute;
+  right: 22px;
+  bottom: 20px;
+  left: 22px;
+  z-index: 1;
+}
+
+.home-category-tile-content span {
+  color: #a9acff;
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.home-category-tile h3 {
+  margin: 7px 0 6px;
+  font-size: 1.35rem;
+}
+
+.home-category-tile p {
+  margin: 0;
+  color: #d0d0d0;
+  line-height: 1.5;
+}
+
+.home-style-showcase {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.8fr) 1.2fr;
+  gap: 56px;
+  border-top: 1px solid $border;
+}
+
+.home-style-list {
+  display: grid;
+  gap: 0;
+}
+
+.home-style-item {
+  display: grid;
+  grid-template-columns: 52px 1fr;
+  gap: 18px;
+  padding: 20px 0;
+  border-bottom: 1px solid $border;
+}
+
+.home-style-item > span {
+  color: $primary;
+  font-size: 0.85rem;
+  font-weight: 800;
+}
+
+.home-style-item h3 {
+  margin: 0 0 6px;
+  color: $text;
+  font-size: 1.2rem;
+}
+
+.home-style-item p {
+  margin: 0;
+  color: $textGray;
+  line-height: 1.6;
+}
+
+@media (max-width: 800px) {
+  .home-category-showcase,
+  .home-style-showcase {
+    grid-template-columns: 1fr;
+  }
+
+  .home-showcase,
+  .home-style-showcase {
+    padding: 56px 20px;
+  }
+}
