@@ -1,5 +1,6 @@
 import Hero from "../components/Hero/Hero";
 import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
 import "../styles/pages.scss";
 import "../styles/Home.scss";
 
@@ -25,6 +26,16 @@ const categoryShowcase = [
 ];
 
 const Home = () => {
+  const [activeCategory, setActiveCategory] = useState(0);
+
+  useEffect(() => {
+    const timer = window.setInterval(() => {
+      setActiveCategory((current) => (current + 1) % categoryShowcase.length);
+    }, 4200);
+
+    return () => window.clearInterval(timer);
+  }, []);
+
   return (
     <main className="home-page">
 
@@ -42,7 +53,12 @@ const Home = () => {
 
         <div className="home-category-showcase">
           {categoryShowcase.map((category) => (
-            <Link className="home-category-tile" to={category.href} key={category.title}>
+            <Link
+              className={`home-category-tile ${categoryShowcase[activeCategory].title === category.title ? "is-active" : ""}`}
+              to={category.href}
+              key={category.title}
+              onMouseEnter={() => setActiveCategory(categoryShowcase.indexOf(category))}
+            >
               <img src={category.image} alt={category.title} />
               <div className="home-category-tile-content">
                 <span>Explorer l’univers</span>
@@ -50,6 +66,20 @@ const Home = () => {
                 <p>{category.text}</p>
               </div>
             </Link>
+          ))}
+        </div>
+
+        <div className="home-showcase-controls" aria-label="Choisir une catégorie">
+          {categoryShowcase.map((category, index) => (
+            <button
+              type="button"
+              className={index === activeCategory ? "is-active" : ""}
+              onClick={() => setActiveCategory(index)}
+              key={category.title}
+              aria-label={`Afficher ${category.title}`}
+            >
+              <span />
+            </button>
           ))}
         </div>
       </section>
