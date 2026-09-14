@@ -593,6 +593,7 @@
 .category-card {
   position: relative;
 
+  display: block;
   height: 280px;
 
   overflow: hidden;
@@ -602,6 +603,8 @@
   border: 1px solid $border;
 
   cursor: pointer;
+  text-decoration: none;
+  color: inherit;
 }
 
 

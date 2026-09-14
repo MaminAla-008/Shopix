@@ -5,16 +5,19 @@ import "../styles/category.scss";
 const categories = [
   {
     id: 1,
+    slug: "phones",
     name: "Téléphone portable",
     image: "https://images.unsplash.com/photo-1510552776732-01aa75f1e7ce?auto=format&fit=crop&w=900&q=80",
   },
   {
     id: 2,
+    slug: "headphones",
     name: "Casque Bluetooth",
     image: "https://images.unsplash.com/photo-1546435770-a3e426bf472b?auto=format&fit=crop&w=900&q=80",
   },
   {
     id: 3,
+    slug: "earbuds",
     name: "Écouteurs sans fil",
     image: "https://images.unsplash.com/photo-1606220945770-b5b6c2c55bf1?auto=format&fit=crop&w=900&q=80",
   },
@@ -82,7 +85,10 @@ function Categories() {
             <div className="overlay">
               <h2>{item.name}</h2>
               <p>Équipements tendance</p>
-              <button type="button" onClick={() => navigate("/shop")}>
+              <button
+                type="button"
+                onClick={() => navigate(`/shop?category=${item.slug}`)}
+              >
                 Voir la sélection
               </button>
             </div>

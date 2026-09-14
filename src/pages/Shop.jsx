@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link, useSearchParams } from "react-router-dom";
 import "../styles/Shop.scss";
 import {
   FaStar,
@@ -17,6 +18,7 @@ const products = [
     price: "$199",
     description:
       'Écran 6,5" AMOLED, 128 Go, batterie 5000 mAh, triple caméra.',
+    category: "phones",
     image:
       "https://images.unsplash.com/photo-1610945265064-0e34e5519bbf",
     rating: 5,
@@ -27,6 +29,7 @@ const products = [
     price: "$899",
     description:
       "Puce A16 Bionic, appareil photo 48 MP, Dynamic Island.",
+    category: "phones",
     image:
       "https://images.unsplash.com/photo-1592750475338-74b7b21085ab",
     rating: 5,
@@ -37,6 +40,7 @@ const products = [
     price: "$129",
     description:
       'Double SIM, 256 Go, batterie longue durée, écran 6,6".',
+    category: "phones",
     image:
       "https://images.unsplash.com/photo-1511707171634-5f897ff02aa9",
     rating: 4,
@@ -47,6 +51,7 @@ const products = [
     price: "$249",
     description:
       "Écran 120 Hz, 8 Go RAM, charge rapide 33 W, caméra 108 MP.",
+    category: "phones",
     image:
       "https://images.unsplash.com/photo-1580910051074-3eb694886505",
     rating: 5,
@@ -57,6 +62,7 @@ const products = [
     price: "$79",
     description:
       "Son puissant, réduction de bruit, autonomie 30 heures.",
+    category: "headphones",
     image:
       "https://images.unsplash.com/photo-1505740420928-5e560c06d30e",
     rating: 5,
@@ -67,6 +73,7 @@ const products = [
     price: "$279",
     description:
       "Écouteurs Bluetooth avec réduction de bruit et étui de charge.",
+    category: "earbuds",
     image:
       "https://images.unsplash.com/photo-1606220945770-b5b6c2c55bf1",
     rating: 4,
@@ -77,6 +84,7 @@ const products = [
     price: "$149",
     description:
       "Audio spatial, étui de charge, connectivité instantanée.",
+    category: "earbuds",
     image:
       "https://images.unsplash.com/photo-1606220945770-b5b6c2c55bf1",
     rating: 5,
@@ -87,6 +95,7 @@ const products = [
     price: "$59",
     description:
       "Son surround 7.1, micro antibruit, confort longue session.",
+    category: "headphones",
     image:
       "https://images.unsplash.com/photo-1599669454699-248893623440",
     rating: 4,
@@ -97,6 +106,7 @@ const products = [
     price: "$249",
     description:
       "Écouteurs sans fil avec audio spatial et réduction de bruit active.",
+    category: "earbuds",
     image:
       "https://images.unsplash.com/photo-1606220945770-b5b6c2c55bf1",
     rating: 4,
@@ -105,16 +115,19 @@ const products = [
 
 const categories = [
   {
+    slug: "phones",
     name: "Téléphone portable",
     image:
       "https://images.unsplash.com/photo-1510552776732-01aa75f1e7ce",
   },
   {
+    slug: "headphones",
     name: "Casque Bluetooth",
     image:
       "https://images.unsplash.com/photo-1546435770-a3e426bf472b",
   },
   {
+    slug: "earbuds",
     name: "Écouteurs sans fil",
     image:
       "https://images.unsplash.com/photo-1606220945770-b5b6c2c55bf1",
@@ -127,6 +140,8 @@ export default function Shop({
   message,
   clearMessage,
 }) {
+  const [searchParams] = useSearchParams();
+  const selectedCategory = searchParams.get("category");
   const [newsletterEmail, setNewsletterEmail] = useState("");
   const [newsletterMessage, setNewsletterMessage] = useState("");
 
@@ -140,6 +155,13 @@ export default function Shop({
     setNewsletterMessage("Merci, votre inscription est confirmée.");
     setNewsletterEmail("");
   };
+
+  const activeCategory = categories.find(
+    (category) => category.slug === selectedCategory
+  );
+  const visibleProducts = activeCategory
+    ? products.filter((product) => product.category === activeCategory.slug)
+    : products;
 
   return (
     <div className="shop-page">
@@ -255,7 +277,9 @@ export default function Shop({
 
           <span>NOTRE SÉLECTION</span>
 
-          <h2>Produits populaires</h2>
+          <h2>
+            {activeCategory ? activeCategory.name : "Produits populaires"}
+          </h2>
 
           <p>
             Les meilleures ventes sélectionnées pour vous.
@@ -266,7 +290,7 @@ export default function Shop({
 
         <div className="product-grid">
 
-          {products.map((item) => (
+          {visibleProducts.map((item) => (
 
             <article
               className="card"
@@ -367,6 +391,12 @@ export default function Shop({
 
         </div>
 
+        {visibleProducts.length === 0 && (
+          <p className="account-message">
+            Aucun produit disponible dans cette catégorie.
+          </p>
+        )}
+
       </section>
 
 
@@ -392,9 +422,10 @@ export default function Shop({
 
           {categories.map((category) => (
 
-            <article
+            <Link
               className="category-card"
               key={category.name}
+              to={`/shop?category=${category.slug}`}
             >
 
               <img
@@ -413,7 +444,7 @@ export default function Shop({
 
               </div>
 
-            </article>
+            </Link>
 
           ))}
 
